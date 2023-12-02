@@ -13,10 +13,10 @@ export default function Profile() {
 
 
   useEffect(() => {
-    if(file) {
+    if (file) {
       handleFileUpload(file);
     }
-  }, [file])
+  }, [file]);
 
   const handleFileUpload = (file) => {
     const storage = getStorage(app);
