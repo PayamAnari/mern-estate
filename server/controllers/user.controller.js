@@ -44,3 +44,7 @@ export const deleteUser = async (req, res, next) => {
     next(error);
   }
 };
+
+export const getUserListings = async (req, res, next) => {
+  if(req.user.id)
+};
