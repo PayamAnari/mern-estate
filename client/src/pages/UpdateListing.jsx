@@ -32,8 +32,17 @@ export default function UpdateListing() {
   useEffect(() => {
    const fetchListing = async () => {
       const listingId = params.listingId;
-   }
-  }, [])
+      const res = await fetch(`/api/listing/get/${listingId}`);
+      const data = await res.json();
+      if(data.success === false) {
+        console.log(data.message);
+        return;
+      }
+      setFormData(data);
+   };
+
+   fetchListing();
+  }, []);
 
   const handleImageSubmit = (e) => {
     if(files.length > 0 && files.length + formData.imageUrls.length < 7){
@@ -120,7 +129,7 @@ export default function UpdateListing() {
     setLoading(true);
     setError(false);
 
-    const res = await fetch('/api/listing/update', {
+    const res = await fetch(`/api/listing/update/${params.listingId}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
