@@ -15,6 +15,7 @@ export default function Profile() {
   const [formData, setFormData] = useState({});
   const [updateSuccess, setUpdateSuccess] = useState(false);
   const [showListingError, setShowListingError] = useState(false);
+  const [deleteListingError, setDeleteListingError] = useState(false);
   const [userListings, setUserListings] = useState([]);
   const dispatch = useDispatch();
 
@@ -129,14 +130,15 @@ export default function Profile() {
     }
   }
 
-  const handleListingDelete = async () => {
+  const handleListingDelete = async (listingId) => {
     try {
-      const res = await fetch(`/api/user/listings/delete/${listingId}`, {
+      setDeleteListingError(false);
+      const res = await fetch(`/api/listing/delete/${listingId}`, {
         method: 'DELETE',
       });
-      const data = await res.jsn();
+      const data = await res.json();
       if(data.success === false){
-        console.log(data.message);
+        setDeleteListingError(true);
         return;
       }
 
@@ -144,16 +146,18 @@ export default function Profile() {
       prev.filter((listing) => listing._id !== listingId)
       );
     } catch (error) {
-      console.log(error.message);
+      setDeleteListingError(true);
     }
   }
 
   return (
-    <div className='p-3 max-w-lg mx-auto'>
-      <h1 className='text-3xl font-semibold text-center my-4' >Profile</h1>
+    <div className='p-3 max-w-5xl mx-auto '>
+      <h1 className='text-3xl font-semibold text-center my-6' >Profile</h1>
+      <div className='flex flex-col sm:flex-row justify-between gap-6'>
+        <div className='flex flex-col flex-1 gap-4 w-full items-center'>
       <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
         <input onChange={(e) => setFile(e.target.files[0])} type='file' ref={fileRef} hidden accept='image/*' />
-        <img onClick={() => fileRef.current.click()} src={formData.avatar || currentUser.avatar} alt='profile' className='rounded-full h-24 w-24 object-cover cursor-pointer self-center mt-1' />
+        <img onClick={() => fileRef.current.click()} src={formData.avatar || currentUser.avatar} alt='profile' className='rounded-full h-28 w-28 object-cover cursor-pointer self-center mt-1' />
         <p className='text-sm self-center'>
           {fileUploadError ? (
             <span className='text-red-700'>
@@ -167,27 +171,29 @@ export default function Profile() {
             ''
           )}
         </p>
-      <input type='text' placeholder='username' defaultValue={currentUser.username} id='username' className='border p-3 rounded-lg' onChange={handleChange}/>
-      <input type='email' placeholder='email' defaultValue={currentUser.email} id='email' className='border p-3 rounded-lg' onChange={handleChange} />
-      <input type='text' placeholder='full name' defaultValue={currentUser.fullname} id='fullname' className='border p-3 rounded-lg' onChange={handleChange}/>
-      <input type='password' placeholder='password' id='password' className='border p-3 rounded-lg' />
+        <p className='text-base uppercase font-semibold text-center'>{`Welcome, ${currentUser.username}`}</p>
+      </form>
+      <button onClick={handleDeleteUser} className='bg-red-700 text-white rounded-lg p-2 uppercase hover:opacity-95 disabled:opacity-80 text-sm w-40'>Delete account</button>
+      <button onClick={handleSignOut} className='bg-blue-700 text-white rounded-lg p-2 uppercase hover:opacity-95 disabled:opacity-80 text-sm w-40'>Sign out</button>
+      </div>
+      <div className='flex flex-col gap-4 flex-1 mt-4 w-full'>
+      <form onSubmit={handleSubmit} className='flex flex-col gap-4 '>
+    
+      <input type='text' placeholder='User Name' defaultValue={currentUser.username} id='username' className='border p-3 rounded-lg' onChange={handleChange}/>
+      <input type='email' placeholder='Email' defaultValue={currentUser.email} id='email' className='border p-3 rounded-lg' onChange={handleChange} />
+      <input type='text' placeholder='Full Name' defaultValue={currentUser.fullname} id='fullname' className='border p-3 rounded-lg' onChange={handleChange}/>
+      <input type='password' placeholder='Password' id='password' className='border p-3 rounded-lg' />
       <button disabled={loading} className='bg-slate-700 text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80'>{loading ? 'Updating...' : 'Update'}</button>
       <Link className='bg-green-700 text-white p-3 rounded-lg uppercase hover:opacity-95 text-center' to={'/create-listing'}>
       Create Listing
       </Link>
       </form>
-      <div className='flex justify-between mt-5'>
-        <button onClick={handleDeleteUser} className='bg-red-700 text-white rounded-lg p-2 uppercase hover:opacity-95 disabled:opacity-80 text-xs'>Delete account</button>
-        <button onClick={handleSignOut} className='bg-blue-700 text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80'>Sign out</button>
-      </div>
-      <p className='text-red-700 mt-5'>{error ? error : ''}</p>
-      <p className='text-green-700 mt-5'>{updateSuccess ? 'User is updated successfully!' : ''}</p>
-      <button disabled={loading} onClick={handleShowListings} className='bg-yellow-500 text-white p-3 rounded-lg uppercase hover:opacity-95 w-full'>{loading ? 'Show Listings...' : 'Show listings'}</button>
+      
+      <button disabled={loading} onClick={handleShowListings} className='bg-green-400 text-white p-3 rounded-lg uppercase hover:opacity-95 w-full'>{loading ? 'Show Listings...' : 'Show listings'}</button>
       <p className='text-red-700 mt-5'>{showListingError ? 'Error showing listings' : ''}</p>
-     
       {userListings && userListings.length > 0 && (
         <div className='flex flex-col gap-4'>
-          <h1 className='text-center mt-7 text-2xl font-semibold'>
+          <h1 className='text-center mt-2 text-2xl font-semibold'>
             Your Listings
           </h1>
           {userListings.map((listing) => (
@@ -219,12 +225,18 @@ export default function Profile() {
                 <Link to={`/update-listing/${listing._id}`}>
                   <button className='text-green-700 uppercase'>Edit</button>
                 </Link>
+                <p className='text-red-700 mt-5'>{deleteListingError ? 'Error deleting listings' : ''}</p>
               </div>
+             
             </div>
           ))}
         </div>
       )}
-     
-    </div>
+      <p className='text-red-700 mt-5'>{error ? error : ''}</p>
+      <p className='text-green-700 mt-5'>{updateSuccess ? 'User is updated successfully!' : ''}</p>
+      </div>
+      </div>
+      </div>
+    
   )
 }
