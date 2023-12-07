@@ -3,6 +3,7 @@ import { getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/
 import {app } from '../firebase';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 export default function CreateListing() {
   const {currentUser } = useSelector(state => state.user);
@@ -43,11 +44,16 @@ export default function CreateListing() {
         setUploading(false);
       })
       .catch((err) => {
-        setImageUploadError('Image upload failed (2 mg max per image');
+        setImageUploadError();
+        toast.error('Image upload failed (2 mg max per image)', { position: 'top-center', autoClose: 2000 });
+      })
+      .finally(() => {
+        setUploading(false);
       });
       
     } else {
-      setImageUploadError('You can only upload 6 images per listing');
+      setImageUploadError();
+      toast.error('You can only upload 6 images per listing', { position: 'top-center', autoClose: 2000 });
       setUploading(false);
     }
   }
@@ -127,8 +133,11 @@ export default function CreateListing() {
     setLoading(false);
     if(data.success === false) {
       setError(error.message);
+      toast.error(error.message, { position: 'top-center', autoClose: 2000 });
     }
-    navigate(`/listing/${data._id}`);
+    toast.success('Listing created successfully!', { position: 'top-center', autoClose: 2000 });
+
+    navigate(`/listing/${data.listing._id}`);
 
    } catch (error) {
     setError(error.message);

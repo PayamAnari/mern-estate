@@ -4,6 +4,7 @@ import { getStorage, uploadBytesResumable, ref, getDownloadURL } from 'firebase/
 import { app } from '../firebase';
 import { updateUserFailure, updateUserStart, updateUserSuccess, deleteUserFailure, deleteUserSuccess, deleteUserStart, signOutUserFailure, signOutUserStart, signOutUserSuccess } from '../redux/user/userSlice';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 
 export default function Profile() {
@@ -40,11 +41,13 @@ export default function Profile() {
       },
       (error) => {
         setFileUploadError(true);
+        toast.error('Error Image upload (image must be less than 2 mb)', { position: 'top-center', autoClose: 2000 });
       },
       () => {
-        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) =>
-          setFormData({ ...formData, avatar: downloadURL })
-        );
+        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+          setFormData({ ...formData, avatar: downloadURL });
+          toast.success('Image successfully uploaded!', { position: 'top-center', autoClose: 2000 });
+        });
       }
     );
   };
@@ -69,14 +72,18 @@ export default function Profile() {
       const data = await res.json();
       if(data.success === false) {
         dispatch(updateUserFailure(data.message));
+        toast.error(data.message, { position: 'top-center',autoClose: 2000, });
+
         return;
       }
 
       dispatch(updateUserSuccess(data));
+      toast.success('User is updated successfully!', { position: 'top-center',autoClose: 2000, });
       setUpdateSuccess(true);
       
     } catch (error) {
       dispatch(updateUserFailure(error.message));
+      toast.error(error.message, { position: 'top-center',autoClose: 2000, });
     }
   }
 
@@ -90,9 +97,11 @@ export default function Profile() {
       const data = await res.json();
       if(data.success === false) {
         dispatch(deleteUserFailure(data.message));
+        toast.error(data.message, { position: 'top-center',autoClose: 2000, });
         return;
       }
       dispatch(deleteUserSuccess(data));
+      toast.success('User is deleted successfully!', { position: 'top-center',autoClose: 2000, });
 
     } catch (error) {
       dispatch(deleteUserFailure(error.message));
@@ -106,9 +115,12 @@ export default function Profile() {
       const data = await res.json();
       if(data.success === false) {
         dispatch(signOutUserFailure(data.message));
+        toast.error(error.message, { position: 'top-center',autoClose: 2000, })
         return;
       }
       dispatch(signOutUserSuccess(data));
+      toast.success('Sign out successful!', { position: 'top-center',autoClose: 2000, });
+
     } catch (error) {
       dispatch(signOutUserFailure(error.message));
     }
@@ -139,12 +151,15 @@ export default function Profile() {
       const data = await res.json();
       if(data.success === false){
         setDeleteListingError(true);
+        toast.error('Error deleting listings', { position: 'top-center',autoClose: 2000, })
         return;
       }
 
       setUserListings((prev) => 
       prev.filter((listing) => listing._id !== listingId)
       );
+      toast.success('Listing deleted successfully!', { position: 'top-center', autoClose: 2000 });
+
     } catch (error) {
       setDeleteListingError(true);
     }
@@ -161,12 +176,11 @@ export default function Profile() {
         <p className='text-sm self-center'>
           {fileUploadError ? (
             <span className='text-red-700'>
-              Error Image upload (image must be less than 2 mb)
             </span>
           ) : filePerc > 0 && filePerc < 100 ? (
             <span className='text-slate-700'>{`Uploading ${filePerc}%`}</span>
           ) : filePerc === 100 ? (
-            <span className='text-green-700'>Image successfully uploaded!</span>
+            <span></span>
           ) : (
             ''
           )}
@@ -188,7 +202,9 @@ export default function Profile() {
       Create Listing
       </Link>
       </form>
-      
+      <p>
+        {updateSuccess ? '' : ''}
+      </p>
       <button disabled={loading} onClick={handleShowListings} className='bg-green-400 text-white p-3 rounded-lg uppercase hover:opacity-95 w-full'>{loading ? 'Show Listings...' : 'Show listings'}</button>
       <p className='text-red-700 mt-5'>{showListingError ? 'Error showing listings' : ''}</p>
       {userListings && userListings.length > 0 && (
@@ -226,15 +242,13 @@ export default function Profile() {
                 <Link to={`/update-listing/${listing._id}`}>
                   <button className='text-green-700 uppercase'>Edit</button>
                 </Link>
-                <p className='text-red-700 mt-5'>{deleteListingError ? 'Error deleting listings' : ''}</p>
+                <p className='text-red-700 mt-5'>{deleteListingError ? '' : ''}</p>
               </div>
              
             </div>
           ))}
         </div>
       )}
-      <p className='text-red-700 mt-5'>{error ? error : ''}</p>
-      <p className='text-green-700 mt-5'>{updateSuccess ? 'User is updated successfully!' : ''}</p>
       </div>
       </div>
       </div>

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate }from 'react-router-dom';
 import OAuth from '../components/OAuth';
+import { toast } from 'react-toastify';
 
 export default function SignUp() {
   const [formData, setFromData] = useState({})
@@ -37,6 +38,8 @@ export default function SignUp() {
       }
       setLoading(false);
       setError(null);
+      const { username } = formData; 
+      toast.success(`${username}, Sign up successfully!`, { position: 'top-center',autoClose: 2000, })
       navigate('/sign-in');
       
     } catch (error) {

@@ -3,6 +3,7 @@ import { getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/
 import {app } from '../firebase';
 import { useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 export default function UpdateListing() {
   const {currentUser } = useSelector(state => state.user);
@@ -98,6 +99,8 @@ export default function UpdateListing() {
       ...formData,
       imageUrls: formData.imageUrls.filter((_, i) => i !== index),
     });
+    toast.success('Image is deleted successfully!', { position: 'top-center', autoClose: 2000 });
+
   };
  
   const handleChange = (e) => {
@@ -143,9 +146,12 @@ export default function UpdateListing() {
     setLoading(false);
     if(data.success === false) {
       setError(error.message);
-    }
-    navigate(`/listing/${data._id}`);
+      toast.error(error.message, { position: 'top-center', autoClose: 2000 });
 
+    }
+    toast.success('Listing updated successfully!', { position: 'top-center', autoClose: 2000 });
+    navigate(`/listing/${params.listingId}`);
+    
    } catch (error) {
     setError(error.message);
     setLoading(false);

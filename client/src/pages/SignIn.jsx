@@ -3,10 +3,12 @@ import { Link, useNavigate }from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { signInStart, signInSuccess, signInFailure } from '../redux/user/userSlice';
 import OAuth from '../components/OAuth';
+import { toast } from 'react-toastify';
+
 
 export default function SignIn() {
   const [formData, setFromData] = useState({})
-  const { loading, error } = useSelector((state) => state.user);
+  const { loading } = useSelector((state) => state.user);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -31,16 +33,20 @@ export default function SignIn() {
         body: JSON.stringify(formData),
       });
       const data = await res.json();
+
       if(data.success === false) {
          dispatch(signInFailure(data.message));
-         
+         toast.error(data.message, { position: 'top-center',autoClose: 2000, });
          return;
       }
       dispatch(signInSuccess(data));
+      const { username } = data;
+      toast.success(`${username}, Sign in successfully!`, { position: 'top-center',autoClose: 2000, });
       navigate('/');
       
     } catch (error) {
       dispatch(signInFailure(error.message));
+      toast.error(error.message);
     }
  
   };
@@ -61,7 +67,7 @@ export default function SignIn() {
           <span className='text-blue-700'>Sign up</span>
         </Link>
       </div>
-      {error && <p className='text-red-500 mt-5'>{error}</p>}
+    
     </div>
   )
 }
