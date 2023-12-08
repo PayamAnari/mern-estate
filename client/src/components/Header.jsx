@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { FaSearch } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { signOutUserStart, signOutUserSuccess, signOutUserFailure } from '../redux/user/userSlice';
 import { toast } from 'react-toastify';
@@ -11,7 +11,25 @@ export default function Header() {
   const { currentUser, error } = useSelector(state => state.user);
   const dispatch = useDispatch();
   const [showDropdown, setShowDropdown] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
   const dropdownRef = useRef(null);
+  const navigate = useNavigate();
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const urlParams = new URLSearchParams(window.location.search);
+    urlParams.set('searchTerm', searchTerm);
+    const searchQuery = urlParams.toString();
+    navigate(`/search?${searchQuery}`);
+  };
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(location.search);
+    const searchTermFromUrl = urlParams.get('searchTerm');
+    if (searchTermFromUrl) {
+      setSearchTerm(searchTermFromUrl);
+    }
+  }, [location.search]);
 
 
   const handleSignOut = async () => {
@@ -57,9 +75,12 @@ export default function Header() {
             <span className='text-slate-700'>Estate</span>
           </h1>
         </Link>
-        <form className='bg-slate-100 p-3 rounded-lg flex items-center'>
-          <input type='text' placeholder='Search...' className='bg-transparent focus:outline-none w-24 sm:w-64' />
+        <form onSubmit={handleSubmit} className='bg-slate-100 p-3 rounded-lg flex items-center'>
+          <input type='text' placeholder='Search...' className='bg-transparent focus:outline-none w-24 sm:w-64' value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
+          <button>
           <FaSearch className='text-slate-600' />
+          </button>
+          
         </form>
         <ul className='flex gap-4 '>
           <Link to='/'>
@@ -79,7 +100,7 @@ export default function Header() {
               />
             )}
             {showDropdown && currentUser && (
-                <div className='absolute right-0 mt-2 bg-slate-300 rounded-md shadow-lg w-32 flex flex-col items-center'>
+                <div className='absolute right-0 mt-2 bg-slate-300 rounded-md shadow-lg sm:w-32 flex flex-col items-center'>
                  <ul className='text-slate-700 py-2'>
                   <li className='cursor-pointer hover:underline py-2 px-4'>
                     <Link to='/profile'>Profile</Link>
