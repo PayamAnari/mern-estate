@@ -12,6 +12,7 @@ import UpdateListing from './pages/UpdateListing';
 import Listing from './pages/Listing';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ShowListings from './pages/ShowListings';
 
 
 export default function App() {
@@ -28,6 +29,7 @@ export default function App() {
       <Route path="/profile" element={<Profile />} />
       <Route path="/create-listing" element={<CreateListing />} />
       <Route path="/update-listing/:listingId" element={<UpdateListing />} />
+      <Route path="/show-listings" element={<ShowListings />} />
     </Route>
    </Routes>
   
