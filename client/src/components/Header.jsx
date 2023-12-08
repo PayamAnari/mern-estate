@@ -47,6 +47,7 @@ export default function Header() {
     };
   }, []);
 
+
   return (
     <header className='bg-slate-200 shadow-md'>
       <div className='flex justify-between items-center max-w-6xl mx-auto p-3'>
@@ -67,11 +68,12 @@ export default function Header() {
           <Link to='/about'>
             <li className='hidden sm:inline text-slate-700 hover:underline'>About</li>
           </Link>
+          {currentUser && <p className='font-semibold capitalize text-xs  mt-2 sm:mt-0 sm:text-base ml-6 sm:ml-0'>{`Welcome, ${currentUser.username}`}</p>}
           <div className='relative' ref={dropdownRef}>
             {currentUser && (
               <img
                 onClick={() => setShowDropdown(!showDropdown)}
-                className='rounded-full h-9 w-9 object-cover cursor-pointer'
+                className='rounded-full h-9 w-9 object-cover cursor-pointer mr-7 sm:mr-0'
                 src={currentUser.avatar}
                 alt='profile'
               />

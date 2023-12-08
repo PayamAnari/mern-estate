@@ -59,6 +59,11 @@ export default function SignIn() {
         <input type='email' placeholder='email' className='border p-3 rounded-lg' id='email' onChange={handleChange} />
         <input type='password' placeholder='password' className='border p-3 rounded-lg' id='password' onChange={handleChange}/>
         <button disabled={loading} className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-80'>{loading ? 'loading...' : 'Sign in'}</button>
+        <div className='flex items-center gap-2 mt-2'>
+        <div className='border-b flex-1 border-slate-400'></div>
+        <span className='mx-2'>Or</span>
+        <div className='border-b flex-1 border-slate-400'></div>
+      </div>
        <OAuth />
       </form>
       <div className='flex gap-2 mt-5'>
