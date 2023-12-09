@@ -50,12 +50,28 @@ export const getUserListings = async (req, res, next) => {
   if (req.user.id === req.params.id) {
     try {
       const listings = await Listing.find({ userRef: req.params.id })
+
       res.status(200).json(listings)
     } catch (error) {
       next(error)
     }
   } else {
     return next(errorHandler(401, 'You can only view your own listings'))
+  }
+}
+
+export const getNumberOfListingsUser = async (req, res, next) => {
+  if (req.user.id === req.params.id) {
+    try {
+      const listings = await Listing.find({ userRef: req.params.id })
+      const count = await Listing.countDocuments({ userRef: req.params.id })
+
+      res.status(200).json({ listings, count })
+    } catch (error) {
+      next(error)
+    }
+  } else {
+    return next(errorHandler(401, 'You have not any listings'))
   }
 }
 

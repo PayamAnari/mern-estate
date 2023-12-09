@@ -77,7 +77,7 @@ export default function Header() {
             <span className='text-slate-700'>Estate</span>
           </h1>
         </Link>
-        <form onSubmit={handleSubmit} className='bg-slate-100 p-3 rounded-lg flex items-center'>
+        <form onSubmit={handleSubmit} className='bg-slate-100 p-3 rounded-lg flex gap-6 items-center sm:gap-0'>
           <input type='text' placeholder='Search...' className='bg-transparent focus:outline-none w-24 sm:w-64' value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
           <button>
           <FaSearch className='text-slate-600' />
@@ -91,7 +91,7 @@ export default function Header() {
           <Link to='/about'>
             <li className='hidden sm:inline text-slate-700 hover:underline'>About</li>
           </Link>
-          {currentUser && <p className='font-semibold text-slate-700 capitalize text-xs  mt-2 sm:mt-0 sm:text-base ml-6 sm:ml-0'>{`Welcome, ${currentUser.username}`}</p>}
+          {currentUser && <p className='font-semibold text-slate-700 capitalize text-xs  mt-2 sm:mt-0 sm:text-base  sm:ml-0'>{`Welcome, ${currentUser.username}`}</p>}
           <div className='relative' ref={dropdownRef} style={{ zIndex: 1000 }}>
             {currentUser && (
               <img

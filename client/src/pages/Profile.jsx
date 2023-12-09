@@ -9,6 +9,7 @@ import UserIcon from '../assets/person.png';
 import EmailIcon from '../assets/email.png';
 import PasswordIcon from '../assets/password.png';
 import NameIcon from '../assets/name.png';
+import Listing from './Listing';
 
 
 export default function Profile() {
@@ -19,6 +20,7 @@ export default function Profile() {
   const [fileUploadError, setFileUploadError] = useState(false);
   const [formData, setFormData] = useState({});
   const [updateSuccess, setUpdateSuccess] = useState(false);
+  const [userListingsCount, setUserListingsCount] = useState(0);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -127,13 +129,29 @@ export default function Profile() {
       dispatch(signOutUserFailure(error.message));
     }
   }
+ 
+  useEffect(() => {
+    const fetchUserListings = async () => {
+      try {
+        const res = await fetch(`/api/user/number-listings/${currentUser._id}`);
+        const data = await res.json();
 
+        if (data.count) {
+          setUserListingsCount(data.count);
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    };
+
+    fetchUserListings();
+  }, [currentUser._id]);
 
   return (
     <div className='p-3 max-w-5xl mx-auto '>
-      <h1 className='text-3xl font-semibold text-center my-6' >Profile</h1>
+      <h1 className='text-3xl font-semibold text-center my-6 capitalize' >{`${currentUser.username} Profile`}</h1>
       <div className='flex flex-col sm:flex-row justify-between gap-6'>
-        <div className='flex flex-col flex-1 gap-4 w-full items-center'>
+        <div className='flex flex-col flex-1 gap-4 w-full items-center border-2 rounded-3xl p-2 shadow-xl'>
       <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
         <input onChange={(e) => setFile(e.target.files[0])} type='file' ref={fileRef} hidden accept='image/*' />
         <img onClick={() => fileRef.current.click()} src={formData.avatar || currentUser.avatar} alt='profile' className='rounded-full h-32 w-32 object-cover cursor-pointer self-center mt-1 shadow-xl' />
@@ -153,9 +171,17 @@ export default function Profile() {
       </form>
       <button onClick={handleDeleteUser} className='bg-red-700 text-white rounded-lg p-2 uppercase hover:opacity-95 disabled:opacity-80 text-sm w-40'>Delete account</button>
       <button onClick={handleSignOut} className='bg-blue-700 text-white rounded-lg p-2 uppercase hover:opacity-95 disabled:opacity-80 text-sm w-40'>Sign out</button>
+      
+      <p>
+        {currentUser && (
+          <p className='font-semibold text-slate-700 capitalize text-xs mt-2 sm:mt-0 sm:text-base sm:ml-0'>
+            {`You have ${userListingsCount} listing${userListingsCount !== 1 ? 's' : ''}`}
+          </p>
+        )}
+      </p>
       </div>
-      <div className='flex flex-col gap-4 flex-1 mt-4 w-full'>
-      <form onSubmit={handleSubmit} className='flex flex-col gap-4 '>
+      <div className='flex flex-col gap-4 flex-1  w-full border-2 rounded-3xl p-2 shadow-xl'>
+      <form onSubmit={handleSubmit} className='flex flex-col gap-4 p-3 '>
       <div className='relative'>
     <input
       type='text'
@@ -177,7 +203,7 @@ export default function Profile() {
       placeholder='Email'
       defaultValue={currentUser.email}
       className='border p-3 rounded-lg pl-10 w-full'
-      id='username'
+      id='email'
       onChange={handleChange}
     />
     <img
