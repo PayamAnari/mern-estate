@@ -13,6 +13,7 @@ import Listing from './pages/Listing';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ShowListings from './pages/ShowListings';
+import Search from './pages/Search';
 
 
 export default function App() {
@@ -24,6 +25,7 @@ export default function App() {
     <Route path="/sign-in" element={<SignIn />} />
     <Route path="/sign-up" element={<SignUp />} />
     <Route path="/about" element={<About />} />
+    <Route path="/search" element={<Search />} />
     <Route path="/listing/:listingId" element={<Listing />} />
     <Route element={<PrivateRoute />}>
       <Route path="/profile" element={<Profile />} />

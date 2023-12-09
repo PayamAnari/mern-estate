@@ -46,6 +46,8 @@ export default function Header() {
       toast.success('Sign out successful!', { position: 'top-center',autoClose: 2000, });
       setShowDropdown(false);
 
+      navigate('/sign-in');
+
     } catch (error) {
       dispatch(signOutUserFailure(error.message));
     }
@@ -89,8 +91,8 @@ export default function Header() {
           <Link to='/about'>
             <li className='hidden sm:inline text-slate-700 hover:underline'>About</li>
           </Link>
-          {currentUser && <p className='font-semibold capitalize text-xs  mt-2 sm:mt-0 sm:text-base ml-6 sm:ml-0'>{`Welcome, ${currentUser.username}`}</p>}
-          <div className='relative' ref={dropdownRef}>
+          {currentUser && <p className='font-semibold text-slate-700 capitalize text-xs  mt-2 sm:mt-0 sm:text-base ml-6 sm:ml-0'>{`Welcome, ${currentUser.username}`}</p>}
+          <div className='relative' ref={dropdownRef} style={{ zIndex: 1000 }}>
             {currentUser && (
               <img
                 onClick={() => setShowDropdown(!showDropdown)}
@@ -98,6 +100,11 @@ export default function Header() {
                 src={currentUser.avatar}
                 alt='profile'
               />
+            )}
+            {!currentUser && (
+              <Link to={'/sign-in'}>
+             <li className='text-slate-700 hover:underline'>Sign in</li>
+             </Link>
             )}
             {showDropdown && currentUser && (
                 <div className='absolute right-0 mt-2 bg-slate-300 rounded-md shadow-lg sm:w-32 flex flex-col items-center'>

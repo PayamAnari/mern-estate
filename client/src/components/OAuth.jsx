@@ -3,6 +3,8 @@ import { app } from '../firebase';
 import { useDispatch } from 'react-redux';
 import { signInSuccess } from '../redux/user/userSlice';
 import { useNavigate } from 'react-router-dom';
+import Google from '../assets/google.png';
+import Facebook from '../assets/facebook.png';
 
 export default function OAuth() {
   const dispatch = useDispatch();
@@ -56,8 +58,12 @@ export default function OAuth() {
 
   return (
     <div className='flex flex-col gap-4 '>
-      <button onClick={handleGoogleClick} type='button' className='bg-red-700 text-white p-3 rounded-lg uppercase hover:opacity-75'>Continue with Google</button>
-      <button onClick={handleFacebookClick} type='button' className='bg-blue-700 text-white p-3 rounded-lg uppercase hover:opacity-75'>Continue with Facebook</button>
+      <button onClick={handleGoogleClick} type='button' className='bg-slate-400 text-white p-3 rounded-lg uppercase hover:opacity-75 flex flex-row-reverse justify-center gap-4'>Continue with Google
+      <img src={Google} alt='google' className='h-6 w-6'/>
+      </button>
+      <button onClick={handleFacebookClick} type='button' className='bg-blue-700 text-white p-3 rounded-lg uppercase hover:opacity-75 flex flex-row-reverse justify-center gap-4'>Continue with Facebook
+      <img src={Facebook} alt='facebook' className='h-7 w-7'/>
+      </button>
     </div>
   );
 }

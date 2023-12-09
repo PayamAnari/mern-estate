@@ -103,7 +103,7 @@ export const getListings = async (req, res, next) => {
     const order = req.query.order || 'desc'
 
     const listings = await Listing.find({
-      ...(searchTerm && { name: { $regex: searchTerm, $options: 'i' } }),
+      title: { $regex: searchTerm, $options: 'i' },
       offer,
       furnished,
       parking,

@@ -3,8 +3,12 @@ import { useEffect, useRef, useState } from 'react';
 import { getStorage, uploadBytesResumable, ref, getDownloadURL } from 'firebase/storage';
 import { app } from '../firebase';
 import { updateUserFailure, updateUserStart, updateUserSuccess, deleteUserFailure, deleteUserSuccess, deleteUserStart, signOutUserFailure, signOutUserStart, signOutUserSuccess } from '../redux/user/userSlice';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import UserIcon from '../assets/person.png';
+import EmailIcon from '../assets/email.png';
+import PasswordIcon from '../assets/password.png';
+import NameIcon from '../assets/name.png';
 
 
 export default function Profile() {
@@ -16,6 +20,7 @@ export default function Profile() {
   const [formData, setFormData] = useState({});
   const [updateSuccess, setUpdateSuccess] = useState(false);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (file) {
@@ -117,7 +122,7 @@ export default function Profile() {
       }
       dispatch(signOutUserSuccess(data));
       toast.success('Sign out successful!', { position: 'top-center',autoClose: 2000, });
-
+      navigate('/sign-in');
     } catch (error) {
       dispatch(signOutUserFailure(error.message));
     }
@@ -131,7 +136,7 @@ export default function Profile() {
         <div className='flex flex-col flex-1 gap-4 w-full items-center'>
       <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
         <input onChange={(e) => setFile(e.target.files[0])} type='file' ref={fileRef} hidden accept='image/*' />
-        <img onClick={() => fileRef.current.click()} src={formData.avatar || currentUser.avatar} alt='profile' className='rounded-full h-28 w-28 object-cover cursor-pointer self-center mt-1' />
+        <img onClick={() => fileRef.current.click()} src={formData.avatar || currentUser.avatar} alt='profile' className='rounded-full h-32 w-32 object-cover cursor-pointer self-center mt-1 shadow-xl' />
         <p className='text-sm self-center'>
           {fileUploadError ? (
             <span className='text-red-700'>
@@ -151,11 +156,64 @@ export default function Profile() {
       </div>
       <div className='flex flex-col gap-4 flex-1 mt-4 w-full'>
       <form onSubmit={handleSubmit} className='flex flex-col gap-4 '>
-    
-      <input type='text' placeholder='User Name' defaultValue={currentUser.username} id='username' className='border p-3 rounded-lg' onChange={handleChange}/>
-      <input type='email' placeholder='Email' defaultValue={currentUser.email} id='email' className='border p-3 rounded-lg' onChange={handleChange} />
-      <input type='text' placeholder='Full Name' defaultValue={currentUser.fullname} id='fullname' className='border p-3 rounded-lg' onChange={handleChange}/>
-      <input type='password' placeholder='Password' id='password' className='border p-3 rounded-lg' />
+      <div className='relative'>
+    <input
+      type='text'
+      placeholder='Username'
+      defaultValue={currentUser.username}
+      className='border p-3 rounded-lg pl-10 w-full'
+      id='username'
+      onChange={handleChange}
+    />
+    <img
+      src={UserIcon}
+      alt='Username Icon'
+      className='absolute left-3 top-3 h-5 w-5'
+    />
+  </div>
+  <div className='relative'>
+    <input
+      type='text'
+      placeholder='Email'
+      defaultValue={currentUser.email}
+      className='border p-3 rounded-lg pl-10 w-full'
+      id='username'
+      onChange={handleChange}
+    />
+    <img
+      src={EmailIcon}
+      alt='Email Icon'
+      className='absolute left-3 top-3 h-5 w-5'
+    />
+  </div>
+  <div className='relative'>
+    <input
+      type='text'
+      placeholder='Full Name'
+      defaultValue={currentUser.fullname}
+      className='border p-3 rounded-lg pl-10 w-full'
+      id='fullname'
+      onChange={handleChange}
+    />
+    <img
+      src={NameIcon}
+      alt='Name Icon'
+      className='absolute left-3 top-3 h-5 w-5'
+    />
+  </div>
+  <div className='relative'>
+    <input
+      type='password'
+      placeholder='Password'
+      className='border p-3 rounded-lg pl-10 w-full'
+      id='password'
+    />
+    <img
+      src={PasswordIcon}
+      alt='Password Icon'
+      className='absolute left-3 top-3 h-5 w-5'
+    />
+  </div>
       <button disabled={loading} className='bg-slate-700 text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80'>{loading ? 'Updating...' : 'Update'}</button>
       <Link className='bg-green-700 text-white p-3 rounded-lg uppercase hover:opacity-95 text-center' to={'/create-listing'}>
       Create Listing

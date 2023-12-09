@@ -2,6 +2,9 @@ import { useState } from 'react';
 import { Link, useNavigate }from 'react-router-dom';
 import OAuth from '../components/OAuth';
 import { toast } from 'react-toastify';
+import UserIcon from '../assets/person.png';
+import EmailIcon from '../assets/email.png';
+import PasswordIcon from '../assets/password.png';
 
 export default function SignUp() {
   const [formData, setFromData] = useState({})
@@ -54,9 +57,48 @@ export default function SignUp() {
     <div className='p-3 max-w-lg mx-auto'>
       <h1 className='text-3xl text-center font-semibold my-7'>Sign Up</h1>
       <form onSubmit={handleSubmit} className='flex flex-col gap-4 '>
-        <input type='text' placeholder='username' className='border p-3 rounded-lg' id='username' onChange={handleChange} />
-        <input type='email' placeholder='email' className='border p-3 rounded-lg' id='email' onChange={handleChange} />
-        <input type='password' placeholder='password' className='border p-3 rounded-lg' id='password' onChange={handleChange}/>
+      <div className='relative'>
+    <input
+      type='text'
+      placeholder='Username'
+      className='border p-3 rounded-lg pl-10 w-full'
+      id='username'
+      onChange={handleChange}
+    />
+    <img
+      src={UserIcon}
+      alt='Username Icon'
+      className='absolute left-3 top-3 h-5 w-5'
+    />
+  </div>
+  <div className='relative'>
+    <input
+      type='text'
+      placeholder='Email'
+      className='border p-3 rounded-lg pl-10 w-full'
+      id='email'
+      onChange={handleChange}
+    />
+    <img
+      src={EmailIcon}
+      alt='Email Icon'
+      className='absolute left-3 top-3 h-5 w-5'
+    />
+  </div>
+  <div className='relative'>
+    <input
+      type='password'
+      placeholder='Password'
+      className='border p-3 rounded-lg pl-10 w-full'
+      id='password'
+      onChange={handleChange}
+    />
+    <img
+      src={PasswordIcon}
+      alt='password Icon'
+      className='absolute left-3 top-3 h-5 w-5'
+    />
+  </div>
         <button disabled={loading} className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-80'>{loading ? 'loading...' : 'Sign up'}</button>
         <div className='flex items-center gap-2 mt-2'>
         <div className='border-b flex-1 border-slate-400'></div>
