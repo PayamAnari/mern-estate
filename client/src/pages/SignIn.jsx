@@ -57,6 +57,7 @@ export default function SignIn() {
   return (
     <div className='p-3 max-w-lg mx-auto'>
       <h1 className='text-3xl text-center font-semibold my-7'>Sign In</h1>
+      <h2 className='text-slate-600 text-2xl text-center font-semibold mb-6'>Welcome Back!</h2>
       <form onSubmit={handleSubmit} className='flex flex-col gap-4 '>
       <div className='relative'>
     <input

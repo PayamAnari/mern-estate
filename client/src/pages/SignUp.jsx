@@ -56,6 +56,7 @@ export default function SignUp() {
   return (
     <div className='p-3 max-w-lg mx-auto'>
       <h1 className='text-3xl text-center font-semibold my-7'>Sign Up</h1>
+      <h2 className=' text-slate-600 text-2xl text-center font-semibold my-5 mb-6'>Welcome to PayamEstate!</h2>
       <form onSubmit={handleSubmit} className='flex flex-col gap-4 '>
       <div className='relative'>
     <input
@@ -108,11 +109,12 @@ export default function SignUp() {
       <OAuth />
       </form>
       <div className='flex gap-2 mt-5'>
-        <p>Have an account</p>
+        <p>Already have an account?</p>
         <Link to={'/sign-in'}>
           <span className='text-blue-700'>Sign in</span>
         </Link>
       </div>
+      <p className='text-slate-500 mt-4 text-sm'>By signing up, you agree to our Terms Of Use and Privacy Policy</p>
       {error && <p className='text-red-500 mt-5'>{error}</p>}
     </div>
   )
