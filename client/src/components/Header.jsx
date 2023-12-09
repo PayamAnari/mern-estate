@@ -91,7 +91,7 @@ export default function Header() {
           <Link to='/about'>
             <li className='hidden sm:inline text-slate-700 hover:underline'>About</li>
           </Link>
-          {currentUser && <p className='font-semibold text-slate-700 capitalize text-xs  mt-2 sm:mt-0 sm:text-base  sm:ml-0'>{`Welcome, ${currentUser.username}`}</p>}
+          {currentUser && <p className='font-semibold text-slate-700 capitalize text-xs  mt-2 sm:mt-0 sm:text-base  sm:ml-0'>{`Hi, ${currentUser.username}`}</p>}
           <div className='relative' ref={dropdownRef} style={{ zIndex: 1000 }}>
             {currentUser && (
               <img

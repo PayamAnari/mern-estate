@@ -175,7 +175,12 @@ export default function Profile() {
       <p>
         {currentUser && (
           <p className='font-semibold text-slate-700 capitalize text-xs mt-2 sm:mt-0 sm:text-base sm:ml-0'>
-            {`You have ${userListingsCount} listing${userListingsCount !== 1 ? 's' : ''}`}
+        {`You have `}
+        <span className={userListingsCount !== 1 ? 'active-listings' : ''}>
+         {`${userListingsCount} `}
+        <span className="text-green-600">active</span>
+       {` listing${userListingsCount !== 1 ? 's' : ''}`}
+</span>
           </p>
         )}
       </p>
