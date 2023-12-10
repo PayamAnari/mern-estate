@@ -149,7 +149,7 @@ export default function Profile() {
 
   return (
     <div className='p-3 max-w-5xl mx-auto '>
-      <h1 className='text-3xl font-semibold text-center my-6 capitalize' >{`${currentUser.username} Profile`}</h1>
+      <h1 className='text-3xl font-semibold text-center my-6 mb-9 capitalize' >{`${currentUser.username} Profile`}</h1>
       <div className='flex flex-col sm:flex-row justify-between gap-6'>
         <div className='flex flex-col flex-1 gap-4 w-full items-center border-2 rounded-3xl p-2 shadow-xl'>
       <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
