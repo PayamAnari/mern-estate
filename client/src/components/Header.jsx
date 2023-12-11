@@ -55,11 +55,8 @@ export default function Header() {
   }
 
   useEffect(() => {
-    const closeDropdowns = (event) => {
-      if (
-        (dropdownRef.current && !dropdownRef.current.contains(event.target)) &&
-        !event.target.classList.contains('text-slate-600')
-      ) {
+    const closeMenus = (event) => {
+      if (isMobileMenuOpen && !event.target.classList.contains('text-black')) {
         setMobileMenuOpen(false);
       }
   
@@ -68,16 +65,16 @@ export default function Header() {
       }
     };
   
-    document.addEventListener('click', closeDropdowns);
+    document.addEventListener('click', closeMenus);
   
     return () => {
-      document.removeEventListener('click', closeDropdowns);
+      document.removeEventListener('click', closeMenus);
     };
   }, [isMobileMenuOpen, showDropdown]);
   
 
   return (
-    <header className='bg-slate-200 shadow-md'>
+    <header className='bg-slate-300 shadow-md'>
       <div className=' justify-between items-center max-w-6xl mx-auto p-3 hidden sm:flex'>
         <Link to='/'>
           <h1 className='font-bold text-sm sm:text-xl flex flex-wrap '>
@@ -93,10 +90,10 @@ export default function Header() {
         </form>
         <ul className='flex gap-4 '>
           <Link to='/'>
-            <li className='hidden sm:inline text-slate-700 hover:underline'>Home</li>
+            <li className='hidden sm:inline text-black hover:text-white'>Home</li>
           </Link>
           <Link to='/about'>
-            <li className='hidden sm:inline text-slate-700 hover:underline'>About</li>
+            <li className='hidden sm:inline text-black hover:text-white'>About</li>
           </Link>
           {currentUser && <p className='font-semibold text-slate-700 capitalize text-xs  mt-2 sm:mt-0 sm:text-base  sm:ml-0'>{`Hi, ${currentUser.username}`}</p>}
           <div className='relative' ref={dropdownRef} style={{ zIndex: 1000 }}>
@@ -110,7 +107,7 @@ export default function Header() {
             )}
             {!currentUser && (
               <Link to={'/sign-in'}>
-             <li className='text-slate-700 hover:underline'>Sign in</li>
+             <li className='text-black hover:text-white'>Sign in</li>
              </Link>
             )}
             {showDropdown && currentUser && (
@@ -135,23 +132,20 @@ export default function Header() {
        
             <div className='sm:hidden'>
   <div className='flex justify-between items-center p-3'>
-    {/* Hamburger Menu */}
     <button onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}>
-      <FaBars className='text-slate-600' />
+      <FaBars className='text-black' />
     </button>
 
-    {/* Logo in Center */}
     <Link to='/'>
       <h1 className='font-bold text-sm flex flex-wrap text-center'>
-        <span className='text-slate-600'>Payam</span>
+        <span className='text-black-600'>Payam</span>
         <span className='text-slate-700'>Estate</span>
       </h1>
     </Link>
 
-    {/* Profile Picture and User Info */}
     {currentUser && (
       <div className='flex items-center'>
-         <p className='font-semibold text-slate-700 capitalize text-xs mr-3'>{`Hi, ${currentUser.username}`}</p>
+         <p className='font-semibold text-black capitalize text-xs mr-3'>{`Hi, ${currentUser.username}`}</p>
         <img
           onClick={() => setShowDropdown(!showDropdown)}
           className='rounded-full h-9 w-9 object-cover cursor-pointer mr-2'
@@ -162,32 +156,31 @@ export default function Header() {
     )}
   </div>
 
-  {/* Mobile Menu */}
   {isMobileMenuOpen && (
-    <div className='bg-slate-300 p-3 flex flex-col items-center '>
+    <div className='bg-slate-400 p-3 flex flex-col items-center '>
       <Link to='/'>
-        <p className='text-slate-700 hover:underline py-2'>Home</p>
+        <p className='text-black hover:text-white  py-2'>Home</p>
       </Link>
       <Link to='/about'>
-        <p className='text-slate-700 hover:underline py-2'>About</p>
+        <p className='text-black hover:text-white py-2'>About</p>
       </Link>
       {currentUser && (
         <Link to='/profile'>
-          <p className='text-slate-700 hover:underline py-2'>Profile</p>
+          <p className='text-black hover:text-white py-2'>Profile</p>
         </Link>
       )}
       {currentUser && (
         <Link to='/show-listings'>
-          <p className='text-slate-700 hover:underline py-2'>Listings</p>
+          <p className='text-black hover:text-white py-2'>Listings</p>
         </Link>
       )}
       {!currentUser && (
         <Link to='/sign-in'>
-          <p className='text-slate-700 hover:underline py-2'>Sign in</p>
+          <p className='text-black hover:text-white py-2'>Sign in</p>
         </Link>
       )}
       {currentUser && (
-        <p onClick={handleSignOut} className='cursor-pointer text-slate-700 hover:underline py-2'>
+        <p onClick={handleSignOut} className='cursor-pointer text-black hover:text-white py-2'>
           Sign Out
         </p>
       )}

@@ -9,7 +9,6 @@ import UserIcon from '../assets/person.png';
 import EmailIcon from '../assets/email.png';
 import PasswordIcon from '../assets/password.png';
 import NameIcon from '../assets/name.png';
-import Listing from './Listing';
 
 
 export default function Profile() {
@@ -151,7 +150,7 @@ export default function Profile() {
     <div className='p-3 max-w-5xl mx-auto '>
       <h1 className='text-3xl font-semibold text-center my-6 mb-9 capitalize' >{`${currentUser.username} Profile`}</h1>
       <div className='flex flex-col sm:flex-row justify-between gap-6'>
-        <div className='flex flex-col flex-1 gap-4 w-full items-center border-2 rounded-3xl p-2 shadow-xl'>
+        <div className='flex flex-col flex-1 gap-4 w-full items-center border-4 rounded-3xl p-2 shadow-xl'>
       <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
         <input onChange={(e) => setFile(e.target.files[0])} type='file' ref={fileRef} hidden accept='image/*' />
         <img onClick={() => fileRef.current.click()} src={formData.avatar || currentUser.avatar} alt='profile' className='rounded-full h-32 w-32 object-cover cursor-pointer self-center mt-1 shadow-xl' />
@@ -185,7 +184,7 @@ export default function Profile() {
         )}
       </p>
       </div>
-      <div className='flex flex-col gap-4 flex-1  w-full border-2 rounded-3xl p-2 shadow-xl'>
+      <div className='flex flex-col gap-4 flex-1  w-full border-4 rounded-3xl p-2 shadow-xl'>
       <form onSubmit={handleSubmit} className='flex flex-col gap-4 p-3 '>
       <div className='relative'>
     <input
