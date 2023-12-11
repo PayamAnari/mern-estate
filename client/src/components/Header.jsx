@@ -78,16 +78,17 @@ export default function Header() {
       <div className=' justify-between items-center max-w-6xl mx-auto p-3 hidden sm:flex'>
         <Link to='/'>
           <h1 className='font-bold text-sm sm:text-xl flex flex-wrap '>
-            <span className='text-slate-600'>Payam</span>
+            <span className='text-blue-600'>Payam</span>
             <span className='text-slate-700'>Estate</span>
           </h1>
         </Link>
-        <form onSubmit={handleSubmit} className='bg-slate-100 p-3 rounded-lg  gap-6 items-center sm:gap-0 hidden sm:flex '>
+        <form onSubmit={handleSubmit} className='bg-slate-100 p-3 rounded-xl  gap-6 items-center sm:gap-0 hidden sm:flex '>
           <input type='text' placeholder='Search...' className='bg-transparent focus:outline-none w-24 sm:w-64' value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
           <button>
           <FaSearch className='text-slate-600' />
           </button>
         </form>
+        
         <ul className='flex gap-4 '>
           <Link to='/'>
             <li className='hidden sm:inline text-black hover:text-white'>Home</li>
@@ -137,15 +138,15 @@ export default function Header() {
     </button>
 
     <Link to='/'>
-      <h1 className='font-bold text-sm flex flex-wrap text-center'>
-        <span className='text-black-600'>Payam</span>
+      <h1 className='font-bold text-lg flex flex-wrap text-center ml-6'>
+        <span className='text-blue-600'>Payam</span>
         <span className='text-slate-700'>Estate</span>
       </h1>
     </Link>
 
     {currentUser && (
       <div className='flex items-center'>
-         <p className='font-semibold text-black capitalize text-xs mr-3'>{`Hi, ${currentUser.username}`}</p>
+         <p className='font-semibold text-black capitalize text-sm mr-3'>{`Hi, ${currentUser.username}`}</p>
         <img
           onClick={() => setShowDropdown(!showDropdown)}
           className='rounded-full h-9 w-9 object-cover cursor-pointer mr-2'
@@ -187,8 +188,8 @@ export default function Header() {
     </div>
   )}
 </div>
-<div className='sm:hidden'>
-      <form onSubmit={handleSubmit} className='bg-slate-100 p-3  flex justify-between sm:gap-0 '>
+<div className='bg-slate-300 p-3 sm:hidden '>
+      <form onSubmit={handleSubmit} className='bg-slate-100 p-3 rounded-3xl flex justify-between sm:gap-0 '>
           <input type='text' placeholder='Search...' className='bg-transparent focus:outline-none w-24 sm:w-64' value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
           <button>
           <FaSearch className='text-slate-600' />
