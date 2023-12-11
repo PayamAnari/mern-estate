@@ -14,6 +14,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ShowListings from './pages/ShowListings';
 import Search from './pages/Search';
+import Footer from './components/Footer';
 
 
 export default function App() {
@@ -34,7 +35,7 @@ export default function App() {
       <Route path="/show-listings" element={<ShowListings />} />
     </Route>
    </Routes>
-  
+  <Footer />
   </BrowserRouter>
    
 }
