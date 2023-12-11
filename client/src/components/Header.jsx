@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
-import { FaSearch } from 'react-icons/fa';
+import { FaSearch, FaBars } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { signOutUserStart, signOutUserSuccess, signOutUserFailure } from '../redux/user/userSlice';
@@ -12,6 +12,7 @@ export default function Header() {
   const dispatch = useDispatch();
   const [showDropdown, setShowDropdown] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const dropdownRef = useRef(null);
   const navigate = useNavigate();
   
@@ -54,35 +55,41 @@ export default function Header() {
   }
 
   useEffect(() => {
-    const closeDropdown = (event) => {
+    const closeDropdowns = (event) => {
+      if (
+        (dropdownRef.current && !dropdownRef.current.contains(event.target)) &&
+        !event.target.classList.contains('text-slate-600')
+      ) {
+        setMobileMenuOpen(false);
+      }
+  
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setShowDropdown(false);
       }
     };
-
-    document.addEventListener('click', closeDropdown);
-
+  
+    document.addEventListener('click', closeDropdowns);
+  
     return () => {
-      document.removeEventListener('click', closeDropdown);
+      document.removeEventListener('click', closeDropdowns);
     };
-  }, []);
-
+  }, [isMobileMenuOpen, showDropdown]);
+  
 
   return (
     <header className='bg-slate-200 shadow-md'>
-      <div className='flex justify-between items-center max-w-6xl mx-auto p-3'>
+      <div className=' justify-between items-center max-w-6xl mx-auto p-3 hidden sm:flex'>
         <Link to='/'>
-          <h1 className='font-bold text-sm sm:text-xl flex flex-wrap'>
+          <h1 className='font-bold text-sm sm:text-xl flex flex-wrap '>
             <span className='text-slate-600'>Payam</span>
             <span className='text-slate-700'>Estate</span>
           </h1>
         </Link>
-        <form onSubmit={handleSubmit} className='bg-slate-100 p-3 rounded-lg flex gap-6 items-center sm:gap-0'>
+        <form onSubmit={handleSubmit} className='bg-slate-100 p-3 rounded-lg  gap-6 items-center sm:gap-0 hidden sm:flex '>
           <input type='text' placeholder='Search...' className='bg-transparent focus:outline-none w-24 sm:w-64' value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
           <button>
           <FaSearch className='text-slate-600' />
           </button>
-          
         </form>
         <ul className='flex gap-4 '>
           <Link to='/'>
@@ -110,10 +117,10 @@ export default function Header() {
                 <div className='absolute right-0 mt-2 bg-slate-300 rounded-md shadow-lg sm:w-32 flex flex-col items-center'>
                  <ul className='text-slate-700 py-2'>
                   <li className='cursor-pointer hover:underline py-2 px-4'>
-                    <Link to='/profile'>Profile</Link>
+                    <Link to='/profile' onClick={() => setShowDropdown(false)}>Profile</Link>
                   </li>
                   <li className='cursor-pointer hover:underline py-2 px-4'>
-                    <Link to='/show-listings'>Listings</Link>
+                    <Link to='/show-listings'onClick={() => setShowDropdown(false)}>Listings</Link>
                   </li>
                   <li onClick={handleSignOut} className='cursor-pointer hover:underline py-2 px-4'>
                     Sign Out
@@ -123,6 +130,77 @@ export default function Header() {
             )}
           </div>
         </ul>
+      </div>
+            {/* Mobile View */}
+       
+            <div className='sm:hidden'>
+  <div className='flex justify-between items-center p-3'>
+    {/* Hamburger Menu */}
+    <button onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}>
+      <FaBars className='text-slate-600' />
+    </button>
+
+    {/* Logo in Center */}
+    <Link to='/'>
+      <h1 className='font-bold text-sm flex flex-wrap text-center'>
+        <span className='text-slate-600'>Payam</span>
+        <span className='text-slate-700'>Estate</span>
+      </h1>
+    </Link>
+
+    {/* Profile Picture and User Info */}
+    {currentUser && (
+      <div className='flex items-center'>
+         <p className='font-semibold text-slate-700 capitalize text-xs mr-3'>{`Hi, ${currentUser.username}`}</p>
+        <img
+          onClick={() => setShowDropdown(!showDropdown)}
+          className='rounded-full h-9 w-9 object-cover cursor-pointer mr-2'
+          src={currentUser.avatar}
+          alt='profile'
+        />
+      </div>
+    )}
+  </div>
+
+  {/* Mobile Menu */}
+  {isMobileMenuOpen && (
+    <div className='bg-slate-300 p-3 flex flex-col items-center '>
+      <Link to='/'>
+        <p className='text-slate-700 hover:underline py-2'>Home</p>
+      </Link>
+      <Link to='/about'>
+        <p className='text-slate-700 hover:underline py-2'>About</p>
+      </Link>
+      {currentUser && (
+        <Link to='/profile'>
+          <p className='text-slate-700 hover:underline py-2'>Profile</p>
+        </Link>
+      )}
+      {currentUser && (
+        <Link to='/show-listings'>
+          <p className='text-slate-700 hover:underline py-2'>Listings</p>
+        </Link>
+      )}
+      {!currentUser && (
+        <Link to='/sign-in'>
+          <p className='text-slate-700 hover:underline py-2'>Sign in</p>
+        </Link>
+      )}
+      {currentUser && (
+        <p onClick={handleSignOut} className='cursor-pointer text-slate-700 hover:underline py-2'>
+          Sign Out
+        </p>
+      )}
+    </div>
+  )}
+</div>
+<div className='sm:hidden'>
+      <form onSubmit={handleSubmit} className='bg-slate-100 p-3  flex justify-between sm:gap-0 '>
+          <input type='text' placeholder='Search...' className='bg-transparent focus:outline-none w-24 sm:w-64' value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
+          <button>
+          <FaSearch className='text-slate-600' />
+          </button>
+        </form>
       </div>
     </header>
   );
