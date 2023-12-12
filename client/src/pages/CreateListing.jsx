@@ -114,8 +114,15 @@ export default function CreateListing() {
   const handleSubmit = async (e) => {
    e.preventDefault();
    try {
-    if(formData.imageUrls.length < 1) return setError('You must upload at least one image');
-    if(+formData.regularPrice < +formData.discountPrice) return setError('Discount price must be lower than regular price');
+    if(formData.imageUrls.length < 1) return 
+    setError('');
+    toast.error('You must upload at least one image')
+    if(+formData.regularPrice < +formData.discountPrice) return 
+    setError('');
+    toast.error('Discount price must be lower than regular price')
+    console.log(formData.regularPrice)
+    console.log(formData.discountPrice)
+
     setLoading(true);
     setError(false);
 
@@ -188,7 +195,9 @@ export default function CreateListing() {
           <input type='number' id='regularPrice' min='50' max='10000000' required className='p-3 border border-gray-300 rounded-lg' onChange={handleChange} value={formData.regularPrice} />
        <div className='flex flex-col items-center'>
        <p>Regular Price</p>
-       <span className='text-xs'>($/ month)</span>
+       {formData.type === 'rent' && (
+       <span className='text-xs'>($ / month)</span>
+          )}
        </div>
        </div>
        {formData.offer &&(
@@ -196,7 +205,9 @@ export default function CreateListing() {
           <input type='number' id='discountPrice' min='0' max='10000000' required className='p-3 border border-gray-300 rounded-lg' onChange={handleChange} value={formData.discountPrice} />
        <div className='flex flex-col items-center'>
        <p>Discounted Price</p>
-       <span className='text-xs'>($/ month)</span>
+       {formData.type === 'rent' && (
+         <span className='text-xs'>($ / month)</span>
+        )}
        </div>
        </div>
       
