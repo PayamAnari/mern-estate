@@ -23,7 +23,6 @@ const handleShowListings = async () => {
       return;
     }
     setUserListings(data);
-
   } catch (error) {
     setShowListingError(true);
   }
