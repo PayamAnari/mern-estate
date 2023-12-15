@@ -1,4 +1,4 @@
-import AboutImage from '../assets/about.jpeg';
+import AboutImage from '../assets/about1.png';
 
 
 export default function About() {
@@ -13,7 +13,9 @@ export default function About() {
       <p className='mb-4 text-slate-700'>Backed by a team of agents with extensive experience and knowledge in the real estate industry, we pledge to provide the highest level of service to our clients. We firmly believe that the process of buying or selling a property should be an exhilarating and fulfilling experience. Our dedication is centered on transforming this belief into a reality for each and every one of our valued clients.</p>
     </div>
     <div className='overflow-hidden'>
-     <img className='w-full h-full object-cover rounded-2xl ' src={AboutImage} alt='About' />
+     <img className='w-full h-full object-cover rounded-2xl '
+      src={AboutImage} alt='About'
+      />
     </div>
     </div>
     </div>
