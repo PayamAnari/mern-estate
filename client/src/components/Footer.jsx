@@ -1,19 +1,42 @@
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { useRef } from 'react';
+import { toast } from 'react-toastify';
+import { sendEmail } from '../utils/Emailjs';
 
 export default function Footer() {
+
+  const form = useRef();
+
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+
+    sendEmail(form.current)
+      .then(() => {
+        toast.success("Thank you for subscribing!", { position: 'top-center',autoClose: 2000, });
+        form.current.reset();
+      })
+      .catch(() => {
+        toast.error("Error subscribing. Please try again.");
+      });
+    };
+
   return (
     <footer className="bg-gray-800 text-white py-6 mt-16">
     <div className="max-w-6xl mx-auto flex flex-col items-center">
     <div className="flex items-center gap-2 ">
+      <form className="flex items-center gap-2 " ref={form} onSubmit={handleSubscribe} >
         <input
-          type="text"
-          placeholder="Subscribe..."
+          type="email"
+          name="user-email"
+          placeholder="example@gmail.com"
           className="bg-gray-600 text-white px-3 py-1 rounded-xl"
+          required
         />
-        <button className="bg-blue-500 text-white px-4 py-1 rounded-xl hover:opacity-90">
+        <button type="submit" className="bg-blue-500 text-white px-4 py-1 rounded-xl hover:opacity-90">
           Subscribe
         </button>
+        </form>
       </div>
       <Link to='/'>
           <h1 className='font-bold text-2xl mt-6'>
