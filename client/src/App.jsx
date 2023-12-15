@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import SignIn from './pages/SignIn';
@@ -15,6 +14,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import ShowListings from './pages/ShowListings';
 import Search from './pages/Search';
 import Footer from './components/Footer';
+import ContactInfo from './pages/ContactInfo';
 
 export default function App() {
   return (
@@ -26,6 +26,7 @@ export default function App() {
         <Route path='/sign-in' element={<SignIn />} />
         <Route path='/sign-up' element={<SignUp />} />
         <Route path='/about' element={<About />} />
+        <Route path='/contact' element={<ContactInfo />} />
         <Route path='/search' element={<Search />} />
         <Route path='/listing/:listingId' element={<Listing />} />
         <Route element={<PrivateRoute />}>
