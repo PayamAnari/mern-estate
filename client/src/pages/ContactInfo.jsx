@@ -3,7 +3,7 @@ export default function ContactInfo() {
     <section className='relative z-10 overflow-hidden bg-white dark:bg-dark py-20 lg:py-[120px]'>
       <div className='container mr-4 ml-3 sm:mx-auto sm:ml-4'>
         <div className='flex flex-wrap -mx-4 lg:justify-between'>
-          <div className='w-full px-4 lg:w-1/2 xl:w-6/12'>
+          <div className='w-full px-4 lg:w-1/2 xl:w-6/12 lg:ml-10'>
             <div className='mb-12 max-w-[570px] lg:mb-0'>
               <span className='block mb-4 text-base font-semibold text-primary'>
                 Contact Us
@@ -12,9 +12,7 @@ export default function ContactInfo() {
                 GET IN <span className='text-blue-600'>TOUCH</span> WITH US
               </h2>
               <p className='text-base leading-relaxed text-body-color dark:text-dark-6 mb-9 mr-4'>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eius tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                adiqua minim veniam quis nostrud exercitation ullamco
+              Have a question, feedback, or just want to say hello? We'd love to hear from you! Feel free to reach out using the contact information below:
               </p>
               <div className='mb-8 flex w-full max-w-[370px]'>
                 <div className='bg-primary/5 text-primary mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded sm:h-[70px] sm:max-w-[70px]'>
@@ -37,7 +35,7 @@ export default function ContactInfo() {
                     Our Location
                   </h4>
                   <p className='text-base text-body-color dark:text-dark-6'>
-                    99 S.t Jomblo Park Pekanbaru 28292. Indonesia
+                  123 Main Street, Anytown, USA 98765
                   </p>
                 </div>
               </div>
@@ -77,7 +75,7 @@ export default function ContactInfo() {
                     Phone Number
                   </h4>
                   <p className='text-base text-body-color dark:text-dark-6'>
-                    (+62)81 414 257 9980
+                  (+1) 555-123-4567
                   </p>
                 </div>
               </div>
@@ -102,7 +100,7 @@ export default function ContactInfo() {
                     Email Address
                   </h4>
                   <p className='text-base text-body-color dark:text-dark-6'>
-                    info@yourdomain.com
+                    info@payamestate.com
                   </p>
                 </div>
               </div>

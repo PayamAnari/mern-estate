@@ -46,7 +46,7 @@ export default function Footer() {
                   />
                   <button
                     type='submit'
-                    className='w-full mt-2.5 px-5 py-3 rounded shadow-sm focus:outline-none font-medium text-white bg-blue-600 hover:opacity-90 sm:flex-shrink-0 sm:w-auto sm:mt-0 sm:ml-5'
+                    className='w-full mt-2.5 px-5 py-3 transition border rounded border-primary bg-primary shadow-sm focus:outline-none font-medium text-white bg-blue-600  hover:opacity-90 sm:flex-shrink-0 sm:w-auto sm:mt-0 sm:ml-5'
                   >
                     Subscribe
                   </button>
