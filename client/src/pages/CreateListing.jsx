@@ -114,17 +114,19 @@ export default function CreateListing() {
   const handleSubmit = async (e) => {
    e.preventDefault();
    try {
-    if(formData.imageUrls.length < 1) return 
     setError('');
+
+    if(formData.imageUrls.length < 1) {
     toast.error('You must upload at least one image')
-    if(+formData.regularPrice < +formData.discountPrice) return 
-    setError('');
+    return ;
+    }
+    
+    if(+formData.regularPrice < +formData.discountPrice) {
     toast.error('Discount price must be lower than regular price')
-    console.log(formData.regularPrice)
-    console.log(formData.discountPrice)
+    return ;
+    }
 
     setLoading(true);
-    setError(false);
 
     const res = await fetch('/api/listing/create', {
       method: 'POST',
