@@ -20,7 +20,7 @@ export default function About() {
             At the core of our mission is the commitment to help clients realize
             their real estate aspirations. We offer expert advice, personalized
             service, and an in-depth understanding of the local market dynamics.
-            Whether you're in the market to purchase, sell, or rent a property,
+            Whether you are in the market to purchase, sell, or rent a property,
             we are your steadfast partner, guiding you through each stage of the
             journey.{' '}
           </p>

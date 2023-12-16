@@ -9,6 +9,7 @@ import {
   signOutUserFailure,
 } from '../redux/user/userSlice';
 import { toast } from 'react-toastify';
+import { SiProton } from 'react-icons/si';
 
 export default function Header() {
   const { currentUser, error } = useSelector((state) => state.user);
@@ -81,7 +82,10 @@ export default function Header() {
       <div className=' justify-between items-center max-w-6xl mx-auto p-3 hidden sm:flex'>
         <Link to='/'>
           <h1 className='font-bold text-sm sm:text-2xl flex flex-wrap '>
-            <span className='text-blue-600'>Payam</span>
+            <div className='flex items-center'>
+              <SiProton className='text-blue-600 mb-1' />
+              <span className='text-blue-600'>ayam</span>
+            </div>
             <span className='text-slate-700'>Estate</span>
           </h1>
         </Link>

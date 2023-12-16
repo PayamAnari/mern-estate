@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useRef } from 'react';
 import { toast } from 'react-toastify';
 import { sendEmail } from '../utils/Emailjs';
+import { SiProton } from 'react-icons/si';
 
 export default function Footer() {
   const form = useRef();
@@ -55,7 +56,7 @@ export default function Footer() {
               <div className='w-full mt-5 sm:w-auto lg:mt-0 lg:ml-5'>
                 <div className='flex justify-center space-x-2.5 lg:mt-7'>
                   <a
-                    href=''
+                    href='https://twitter.com'
                     className='p-2.5 rounded-full border-2 border-white transition-colors hover:bg-blue-600'
                     target='_blank'
                   >
@@ -69,7 +70,7 @@ export default function Footer() {
                     </svg>
                   </a>
                   <a
-                    href='#'
+                    href='https://facebook.com'
                     className='p-2.5 rounded-full border-2 border-white transition-colors hover:bg-blue-600'
                     target='_blank'
                   >
@@ -83,7 +84,7 @@ export default function Footer() {
                     </svg>
                   </a>
                   <a
-                    href='#'
+                    href='https://youtube.com'
                     className='p-2.5 rounded-full border-2 border-white transition-colors hover:bg-blue-600'
                     target='_blank'
                   >
@@ -97,7 +98,7 @@ export default function Footer() {
                     </svg>
                   </a>
                   <a
-                    href='#'
+                    href='https://instagram.com'
                     className='p-2.5 rounded-full border-2 border-white transition-colors hover:bg-blue-600'
                     target='_blank'
                   >
@@ -118,8 +119,11 @@ export default function Footer() {
 
         <div>
           <Link to='/'>
-            <h1 className='font-bold text-2xl'>
-              <span className='text-blue-400'>Payam</span>
+            <h1 className='flex font-bold text-2xl'>
+              <div className='flex'>
+                <SiProton className='text-blue-600' />
+                <span className='text-blue-600'>ayam</span>
+              </div>
               <span className='text-slate-500'>Estate</span>
             </h1>
           </Link>

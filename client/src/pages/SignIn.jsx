@@ -56,7 +56,7 @@ export default function SignIn() {
   };
 
   return (
-    <div className=' max-w-lg border-4 rounded-3xl p-4 mt-9 mx-4 sm:mx-auto shadow-xl'>
+    <div className='bg-slate-300 max-w-lg border-2 border-gray-300 rounded-3xl p-4 mt-9 mb-9 mx-4 sm:mx-auto shadow-2xl'>
       <h1 className='text-3xl text-center font-semibold my-7'>Sign In</h1>
       <h2 className='text-slate-600 text-2xl text-center font-semibold mb-6'>
         Welcome Back!

@@ -172,7 +172,7 @@ export default function Profile() {
   }, [currentUser._id]);
 
   return (
-    <div className='p-3 max-w-5xl mx-auto '>
+    <div className='p-3 max-w-5xl mx-auto mb-10 '>
       <h1 className='text-3xl font-semibold text-center my-6 mb-9 capitalize'>{`${currentUser.username} Profile`}</h1>
       <div className='flex flex-col sm:flex-row justify-between gap-6'>
         <div className='flex flex-col flex-1 gap-4 w-full items-center border-4 rounded-3xl p-2 shadow-xl'>
