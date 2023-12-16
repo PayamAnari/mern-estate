@@ -106,7 +106,9 @@ export default function Home() {
               ></path>
             </svg>
           </div>
-          <h3 className='text-3xl font-bold'>Secure Living Spaces</h3>
+          <h3 className='text-xl font-bold md:text-2xl sm:text-3xl'>
+            Secure Living Spaces
+          </h3>
           <p>Discover homes with advanced security for your peace of mind</p>
         </div>
         <div className='grid gap-4 justify-items-center text-center md:flex-1'>
@@ -126,7 +128,9 @@ export default function Home() {
               ></path>
             </svg>
           </div>
-          <h3 className='text-3xl font-bold'>Luxurious Properties</h3>
+          <h3 className='text-xl font-bold md:text-2xl sm:text-3xl'>
+            Luxurious Properties
+          </h3>
           <p>Discover high-end properties with modern amenities</p>
         </div>
         <div className='grid gap-4 justify-items-center text-center md:flex-1'>
@@ -146,7 +150,9 @@ export default function Home() {
               ></path>
             </svg>
           </div>
-          <h3 className='text-3xl font-bold'>Trusted Expertise</h3>
+          <h3 className='text-xl font-bold md:text-2xl sm:text-3xl'>
+            Trusted Expertise
+          </h3>
           <p>Benefit from our real estate expertise for a decade</p>
         </div>
       </div>
