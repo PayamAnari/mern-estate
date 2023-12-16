@@ -107,17 +107,17 @@ export default function Header() {
 
         <ul className='flex gap-4 '>
           <Link to='/'>
-            <li className='hidden sm:inline text-black hover:text-white'>
+            <li className='hidden sm:inline text-gray-800 font-semibold hover:text-white'>
               Home
             </li>
           </Link>
           <Link to='/about'>
-            <li className='hidden sm:inline text-black hover:text-white'>
+            <li className='hidden sm:inline text-gray-800 font-semibold hover:text-white'>
               About
             </li>
           </Link>
           <Link to='/contact'>
-            <li className='hidden sm:inline text-black hover:text-white'>
+            <li className='hidden sm:inline text-gray-800 font-semibold hover:text-white'>
               Contact
             </li>
           </Link>
@@ -135,18 +135,20 @@ export default function Header() {
             )}
             {!currentUser && (
               <Link to={'/sign-in'}>
-                <li className='text-black hover:text-white'>Sign in</li>
+                <li className='text-gray-800 font-semibold hover:text-white'>
+                  Sign in
+                </li>
               </Link>
             )}
             {showDropdown && currentUser && (
               <div className='absolute right-0 mt-2 bg-slate-300 rounded-md shadow-lg sm:w-32 flex flex-col items-center'>
                 <ul className='text-slate-700 py-2'>
-                  <li className='cursor-pointer hover:underline py-2 px-4'>
+                  <li className='cursor-pointer font-semibold hover:text-white py-2 px-4'>
                     <Link to='/profile' onClick={() => setShowDropdown(false)}>
                       Profile
                     </Link>
                   </li>
-                  <li className='cursor-pointer hover:underline py-2 px-4'>
+                  <li className='cursor-pointer font-semibold hover:text-white py-2 px-4'>
                     <Link
                       to='/show-listings'
                       onClick={() => setShowDropdown(false)}
@@ -156,7 +158,7 @@ export default function Header() {
                   </li>
                   <li
                     onClick={handleSignOut}
-                    className='cursor-pointer hover:underline py-2 px-4'
+                    className='cursor-pointer font-semibold hover:text-white py-2 px-4'
                   >
                     Sign Out
                   </li>
