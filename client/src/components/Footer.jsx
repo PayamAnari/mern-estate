@@ -137,6 +137,9 @@ export default function Footer() {
           <a href='/profile' className='hover:text-gray-400 '>
             Profile
           </a>
+          <a href='/contact' className='hover:text-gray-400 '>
+            Contact
+          </a>
         </div>
       </div>
       <hr className='mt-5' />

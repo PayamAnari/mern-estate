@@ -1,4 +1,29 @@
+import { useRef } from 'react';
+import { toast } from 'react-toastify';
+import { sendMessage } from '../utils/Emailjs';
+
 export default function ContactInfo() {
+  const form = useRef();
+
+  const sendMessageHandler = (e) => {
+    e.preventDefault();
+
+    sendMessage(form.current)
+      .then(() => {
+        toast.success('Your message has been sent', {
+          position: 'top-center',
+          autoClose: 2000,
+        });
+        form.current.reset();
+      })
+      .catch(() => {
+        toast.error('Error. Please try again.', {
+          position: 'top-center',
+          autoClose: 2000,
+        });
+      });
+  };
+
   return (
     <section className='relative z-10 overflow-hidden bg-white dark:bg-dark py-20 lg:py-[120px]'>
       <div className='container mr-4 ml-3 sm:mx-auto sm:ml-4'>
@@ -12,7 +37,9 @@ export default function ContactInfo() {
                 GET IN <span className='text-blue-600'>TOUCH</span> WITH US
               </h2>
               <p className='text-base leading-relaxed text-body-color dark:text-dark-6 mb-9 mr-4'>
-              Have a question, feedback, or just want to say hello? We'd love to hear from you! Feel free to reach out using the contact information below:
+                Have a question, feedback, or just want to say hello? We'd love
+                to hear from you! Feel free to reach out using the contact
+                information below:
               </p>
               <div className='mb-8 flex w-full max-w-[370px]'>
                 <div className='bg-primary/5 text-primary mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded sm:h-[70px] sm:max-w-[70px]'>
@@ -35,7 +62,7 @@ export default function ContactInfo() {
                     Our Location
                   </h4>
                   <p className='text-base text-body-color dark:text-dark-6'>
-                  123 Main Street, Anytown, USA 98765
+                    123 Main Street, Anytown, USA 98765
                   </p>
                 </div>
               </div>
@@ -75,7 +102,7 @@ export default function ContactInfo() {
                     Phone Number
                   </h4>
                   <p className='text-base text-body-color dark:text-dark-6'>
-                  (+1) 555-123-4567
+                    (+1) 555-123-4567
                   </p>
                 </div>
               </div>
@@ -108,33 +135,38 @@ export default function ContactInfo() {
           </div>
           <div className='w-full px-4 lg:w-1/2 xl:w-5/12'>
             <div className='relative p-8 bg-gray-400 rounded-lg shadow-2xl dark:bg-dark-2  sm:p-12'>
-              <form>
+              <form ref={form} onSubmit={sendMessageHandler}>
                 <div className='mb-6'>
                   <input
                     type='text'
                     placeholder='Your Name'
-                    className='border-stroke dark:border-dark-3 dark:text-dark-6 dark:bg-dark text-body-color focus:border-primary w-full rounded border py-3 px-[14px] text-base outline-none'
+                    className='border-stroke dark:border-dark-3 dark:text-dark-6 dark:bg-dark text-body-color focus:border-black w-full rounded border py-3 px-[14px] text-base outline-none'
+                    required
                   />
                 </div>
                 <div className='mb-6'>
                   <input
                     type='email'
+                    name='user_email'
                     placeholder='Your Email'
-                    className='border-stroke dark:border-dark-3 dark:text-dark-6 dark:bg-dark text-body-color focus:border-primary w-full rounded border py-3 px-[14px] text-base outline-none'
+                    className='border-stroke dark:border-dark-3 dark:text-dark-6 dark:bg-dark text-body-color focus:border-black w-full rounded border py-3 px-[14px] text-base outline-none'
+                    required
                   />
                 </div>
                 <div className='mb-6'>
                   <input
                     type='text'
                     placeholder='Your Phone'
-                    className='border-stroke dark:border-dark-3 dark:text-dark-6 dark:bg-dark text-body-color focus:border-primary w-full rounded border py-3 px-[14px] text-base outline-none'
+                    className='border-stroke dark:border-dark-3 dark:text-dark-6 dark:bg-dark text-body-color focus:border-black w-full rounded border py-3 px-[14px] text-base outline-none'
+                    required
                   />
                 </div>
                 <div className='mb-6'>
                   <textarea
                     rows='6'
                     placeholder='Your Message'
-                    className='border-stroke dark:border-dark-3 dark:text-dark-6 dark:bg-dark text-body-color focus:border-primary w-full resize-none rounded border py-3 px-[14px] text-base outline-none'
+                    className='border-stroke dark:border-dark-3 dark:text-dark-6 dark:bg-dark text-body-color focus:border-black w-full resize-none rounded border py-3 px-[14px] text-base outline-none'
+                    required
                   ></textarea>
                 </div>
                 <div>

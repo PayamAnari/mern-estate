@@ -112,6 +112,11 @@ export default function Header() {
               About
             </li>
           </Link>
+          <Link to='/contact'>
+            <li className='hidden sm:inline text-black hover:text-white'>
+              Contact
+            </li>
+          </Link>
           {currentUser && (
             <p className='font-semibold text-slate-700 capitalize text-xs  mt-2 sm:mt-0 sm:text-base  sm:ml-0'>{`Hi, ${currentUser.username}`}</p>
           )}
@@ -188,30 +193,45 @@ export default function Header() {
         {isMobileMenuOpen && (
           <div className='bg-slate-400 p-3 flex flex-col items-center '>
             <Link to='/'>
-              <p className='text-black hover:text-white  py-2'>Home</p>
+              <p className='text-black font-semibold hover:text-white  py-2'>
+                Home
+              </p>
             </Link>
             <Link to='/about'>
-              <p className='text-black hover:text-white py-2'>About</p>
+              <p className='text-black font-semibold hover:text-white py-2'>
+                About
+              </p>
+            </Link>
+            <Link to='/contact'>
+              <p className='text-black font-semibold hover:text-white py-2'>
+                Contact
+              </p>
             </Link>
             {currentUser && (
               <Link to='/profile'>
-                <p className='text-black hover:text-white py-2'>Profile</p>
+                <p className='text-black font-semibold hover:text-white py-2'>
+                  Profile
+                </p>
               </Link>
             )}
             {currentUser && (
               <Link to='/show-listings'>
-                <p className='text-black hover:text-white py-2'>Listings</p>
+                <p className='text-black font-semibold hover:text-white py-2'>
+                  Listings
+                </p>
               </Link>
             )}
             {!currentUser && (
               <Link to='/sign-in'>
-                <p className='text-black hover:text-white py-2'>Sign in</p>
+                <p className='text-black font-semibold hover:text-white py-2'>
+                  Sign in
+                </p>
               </Link>
             )}
             {currentUser && (
               <p
                 onClick={handleSignOut}
-                className='cursor-pointer text-black hover:text-white py-2'
+                className='cursor-pointer text-black font-semibold hover:text-white py-2'
               >
                 Sign Out
               </p>
