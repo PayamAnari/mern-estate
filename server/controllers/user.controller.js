@@ -24,6 +24,7 @@ export const updateUser = async (req, res, next) => {
       },
       { new: true }
     )
+    console.log('Avatar value:', updatedUser.avatar)
 
     const { password, ...rest } = updatedUser._doc
 

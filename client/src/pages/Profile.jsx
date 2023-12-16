@@ -54,6 +54,7 @@ export default function Profile() {
       (snapshot) => {
         const progress =
           (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+
         setFilePerc(Math.round(progress));
       },
       (error) => {
@@ -66,6 +67,7 @@ export default function Profile() {
       () => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
           setFormData({ ...formData, avatar: downloadURL });
+
           toast.success('Image successfully uploaded!', {
             position: 'top-center',
             autoClose: 2000,
@@ -92,6 +94,7 @@ export default function Profile() {
       });
 
       const data = await res.json();
+
       if (data.success === false) {
         dispatch(updateUserFailure(data.message));
         toast.error(data.message, { position: 'top-center', autoClose: 2000 });
@@ -100,11 +103,11 @@ export default function Profile() {
       }
 
       dispatch(updateUserSuccess(data));
+      setUpdateSuccess(true);
       toast.success('User is updated successfully!', {
         position: 'top-center',
         autoClose: 2000,
       });
-      setUpdateSuccess(true);
     } catch (error) {
       dispatch(updateUserFailure(error.message));
       toast.error(error.message, { position: 'top-center', autoClose: 2000 });
@@ -158,6 +161,7 @@ export default function Profile() {
     const fetchUserListings = async () => {
       try {
         const res = await fetch(`/api/user/number-listings/${currentUser._id}`);
+
         const data = await res.json();
 
         if (data.count) {
@@ -175,7 +179,7 @@ export default function Profile() {
     <div className='p-3 max-w-5xl mx-auto mb-10 '>
       <h1 className='text-3xl font-semibold text-center my-6 mb-9 capitalize'>{`${currentUser.username} Profile`}</h1>
       <div className='flex flex-col sm:flex-row justify-between gap-6'>
-        <div className='flex flex-col flex-1 gap-4 w-full items-center border-4 rounded-3xl p-2 shadow-xl'>
+        <div className='bg-slate-300 flex flex-col flex-1 gap-4 w-full items-center border-2 border-gray-300  rounded-3xl p-2 shadow-2xl'>
           <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
             <input
               onChange={(e) => setFile(e.target.files[0])}
@@ -192,7 +196,7 @@ export default function Profile() {
             />
             <p className='text-sm self-center'>
               {fileUploadError ? (
-                <span className='text-red-700'></span>
+                <span></span>
               ) : filePerc > 0 && filePerc < 100 ? (
                 <span className='text-slate-700'>{`Uploading ${filePerc}%`}</span>
               ) : filePerc === 100 ? (
@@ -231,7 +235,7 @@ export default function Profile() {
             )}
           </p>
         </div>
-        <div className='flex flex-col gap-4 flex-1  w-full border-4 rounded-3xl p-2 shadow-xl'>
+        <div className='bg-slate-300 flex flex-col gap-4 flex-1  w-full border-2 border-gray-300 rounded-3xl p-2 shadow-2xl'>
           <form onSubmit={handleSubmit} className='flex flex-col gap-4 p-3 '>
             <div className='relative'>
               <input
