@@ -56,7 +56,7 @@ export default function Footer() {
               <div className='w-full mt-5 sm:w-auto lg:mt-0 lg:ml-5'>
                 <div className='flex justify-center space-x-2.5 lg:mt-7'>
                   <a
-                    href='https://twitter.com'
+                    href='https://www.twitter.com'
                     className='p-2.5 rounded-full border-2 border-white transition-colors hover:bg-blue-600'
                     target='_blank'
                   >
@@ -70,7 +70,7 @@ export default function Footer() {
                     </svg>
                   </a>
                   <a
-                    href='https://facebook.com'
+                    href='https://www.facebook.com'
                     className='p-2.5 rounded-full border-2 border-white transition-colors hover:bg-blue-600'
                     target='_blank'
                   >
@@ -84,7 +84,7 @@ export default function Footer() {
                     </svg>
                   </a>
                   <a
-                    href='https://youtube.com'
+                    href='https://www.youtube.com'
                     className='p-2.5 rounded-full border-2 border-white transition-colors hover:bg-blue-600'
                     target='_blank'
                   >
@@ -98,7 +98,7 @@ export default function Footer() {
                     </svg>
                   </a>
                   <a
-                    href='https://instagram.com'
+                    href='https://www.instagram.com'
                     className='p-2.5 rounded-full border-2 border-white transition-colors hover:bg-blue-600'
                     target='_blank'
                   >
@@ -128,7 +128,7 @@ export default function Footer() {
             </h1>
           </Link>
         </div>
-        <div className=' flex mt-8 gap-5 '>
+        <div className=' flex mt-8 gap-5 text-normal sm:text-lg'>
           <a href='/' className='hover:text-gray-400 '>
             Home
           </a>
@@ -147,7 +147,7 @@ export default function Footer() {
         </div>
       </div>
       <hr className='mt-5' />
-      <div className=' flex mt-8 gap-3 justify-center text-sm text-gray-400 '>
+      <div className=' flex mt-8 gap-3 justify-center text-xs sm:text-sm text-gray-400 '>
         <a href='/' className='hover:text-white '>
           FAQ
         </a>
