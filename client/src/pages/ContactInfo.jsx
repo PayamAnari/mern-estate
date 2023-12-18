@@ -139,6 +139,7 @@ export default function ContactInfo() {
                 <div className='mb-6'>
                   <input
                     type='text'
+                    name='name'
                     placeholder='Your Name'
                     className='border-stroke dark:border-dark-3 dark:text-dark-6 dark:bg-dark text-body-color focus:border-black w-full rounded border py-3 px-[14px] text-base outline-none'
                     required
@@ -147,7 +148,7 @@ export default function ContactInfo() {
                 <div className='mb-6'>
                   <input
                     type='email'
-                    name='user_email'
+                    name='email'
                     placeholder='Your Email'
                     className='border-stroke dark:border-dark-3 dark:text-dark-6 dark:bg-dark text-body-color focus:border-black w-full rounded border py-3 px-[14px] text-base outline-none'
                     required
@@ -156,6 +157,7 @@ export default function ContactInfo() {
                 <div className='mb-6'>
                   <input
                     type='text'
+                    name='phone'
                     placeholder='Your Phone'
                     className='border-stroke dark:border-dark-3 dark:text-dark-6 dark:bg-dark text-body-color focus:border-black w-full rounded border py-3 px-[14px] text-base outline-none'
                     required
@@ -164,6 +166,7 @@ export default function ContactInfo() {
                 <div className='mb-6'>
                   <textarea
                     rows='6'
+                    name='message'
                     placeholder='Your Message'
                     className='border-stroke dark:border-dark-3 dark:text-dark-6 dark:bg-dark text-body-color focus:border-black w-full resize-none rounded border py-3 px-[14px] text-base outline-none'
                     required

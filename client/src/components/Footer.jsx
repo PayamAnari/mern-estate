@@ -41,7 +41,7 @@ export default function Footer() {
                   <input
                     className='block w-full px-12 py-3 outline-none border rounded shadow-sm text-gray-300 border-[#3c3c3c] bg-[#121212] focus:border-white focus:ring-1 focus:ring-white'
                     type='email'
-                    name='user-email'
+                    name='email'
                     placeholder='Your e-mail'
                     required
                   />
