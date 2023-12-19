@@ -181,7 +181,7 @@ export default function Header() {
           </button>
 
           <Link to='/'>
-            <h1 className='font-bold text-lg flex flex-wrap text-center ml-6'>
+            <h1 className='font-bold text-lg flex flex-wrap text-center'>
               <div className='flex items-center'>
                 <SiProton className='text-blue-600 mb-1' />
                 <span className='text-blue-600'>ayam</span>

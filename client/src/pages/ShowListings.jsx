@@ -65,8 +65,7 @@ export default function ShowListings() {
         {userListings.length === 0 && (
           <div className='flex flex-col items-center'>
             <p className='text-center my-7 text-2xl'>
-              You haven't created any listings yet. Click below to create your
-              first listing!
+              Click below to create your first listing!
             </p>
             <Link
               className=' text-blue-700 font-semibold cursor-pointer'
