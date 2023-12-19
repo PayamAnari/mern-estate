@@ -77,6 +77,10 @@ export default function Header() {
     };
   }, [isMobileMenuOpen, showDropdown]);
 
+  const handleLinkClick = () => {
+    setMobileMenuOpen(false);
+  };
+
   return (
     <header className='bg-slate-300 shadow-md'>
       <div className=' justify-between items-center max-w-6xl mx-auto p-3 hidden sm:flex'>
@@ -201,37 +205,37 @@ export default function Header() {
 
         {isMobileMenuOpen && (
           <div className='bg-slate-400 p-3 flex flex-col items-center '>
-            <Link to='/'>
+            <Link to='/' onClick={handleLinkClick}>
               <p className='text-black font-semibold hover:text-white  py-2'>
                 Home
               </p>
             </Link>
-            <Link to='/about'>
+            <Link to='/about' onClick={handleLinkClick}>
               <p className='text-black font-semibold hover:text-white py-2'>
                 About
               </p>
             </Link>
-            <Link to='/contact'>
+            <Link to='/contact' onClick={handleLinkClick}>
               <p className='text-black font-semibold hover:text-white py-2'>
                 Contact
               </p>
             </Link>
             {currentUser && (
-              <Link to='/profile'>
+              <Link to='/profile' onClick={handleLinkClick}>
                 <p className='text-black font-semibold hover:text-white py-2'>
                   Profile
                 </p>
               </Link>
             )}
             {currentUser && (
-              <Link to='/show-listings'>
+              <Link to='/show-listings' onClick={handleLinkClick}>
                 <p className='text-black font-semibold hover:text-white py-2'>
                   Listings
                 </p>
               </Link>
             )}
             {!currentUser && (
-              <Link to='/sign-in'>
+              <Link to='/sign-in' onClick={handleLinkClick}>
                 <p className='text-black font-semibold hover:text-white py-2'>
                   Sign in
                 </p>
