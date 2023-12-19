@@ -50,7 +50,6 @@ export default function OAuth() {
       const auth = getAuth(app);
 
       const result = await signInWithPopup(auth, provider);
-      console.log('Facebook User Data:', result.user);
 
       const res = await fetch('/api/auth/facebook', {
         method: 'POST',
@@ -63,6 +62,7 @@ export default function OAuth() {
           photo: result.user.photoURL,
         }),
       });
+
       const data = await res.json();
       dispatch(signInSuccess(data));
       navigate('/');

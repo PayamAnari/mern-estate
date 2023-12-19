@@ -62,6 +62,21 @@ export default function ShowListings() {
         <p className='text-red-700 mt-5'>
           {showListingError ? 'Error showing listings' : ''}
         </p>
+        {userListings.length === 0 && (
+          <div className='flex flex-col items-center'>
+            <p className='text-center my-7 text-2xl'>
+              You haven't created any listings yet. Click below to create your
+              first listing!
+            </p>
+            <Link
+              className=' text-blue-700 font-semibold cursor-pointer'
+              to={'/create-listing'}
+            >
+              Create Listing
+            </Link>
+          </div>
+        )}
+
         {userListings && userListings.length > 0 && (
           <div className='flex flex-col gap-4'>
             <h1 className='text-center mb-3 text-2xl font-semibold'>
