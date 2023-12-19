@@ -87,6 +87,7 @@ export const facebook = async (req, res, next) => {
       const newUser = new User({
         username:
           req.body.name.split(' ').join('').toLowerCase() +
+          '-' +
           Math.random().toString(36).slice(-4),
         email: req.body.email,
         password: hashedPassword,
@@ -101,6 +102,7 @@ export const facebook = async (req, res, next) => {
         .json(rest)
     }
   } catch (error) {
+    console.error('Error in Facebook authentication:', error)
     next(error)
   }
 }
