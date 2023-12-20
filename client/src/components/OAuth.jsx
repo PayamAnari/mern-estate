@@ -8,13 +8,10 @@ import { app } from '../firebase';
 import { useDispatch } from 'react-redux';
 import { signInSuccess } from '../redux/user/userSlice';
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
 import Google from '../assets/google.png';
 import Facebook from '../assets/facebook.png';
 
 export default function OAuth() {
-  const [user, setUser] = useState(null);
-  const [profilePicture, setProfilePicture] = useState(null);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -47,20 +44,12 @@ export default function OAuth() {
 
   const handleFacebookClick = async () => {
     try {
-      const auth = getAuth(app);
       const provider = new FacebookAuthProvider();
+      provider.addScope('email');
+      provider.addScope('public_profile');
+      const auth = getAuth(app);
 
       const result = await signInWithPopup(auth, provider);
-      setUser(result.user);
-
-      const { displayName, email } = result.user;
-
-      const credential = FacebookAuthProvider.credentialFromResult(result);
-      const accessToken = credential.accessToken;
-
-      const profilePictureURL = `https://graph.facebook.com/${result.user.providerData[0].uid}/picture?type=large&access_token=${accessToken}`;
-
-      setProfilePicture(profilePictureURL);
 
       const res = await fetch('/api/auth/facebook', {
         method: 'POST',
@@ -68,10 +57,9 @@ export default function OAuth() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          name: displayName,
-          email,
-          photo: profilePictureURL,
-          accessToken,
+          name: result.user.displayName,
+          email: result.user.email,
+          photo: result.user.photoURL,
         }),
       });
 

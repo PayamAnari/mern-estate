@@ -96,7 +96,7 @@ export const facebook = async (req, res, next) => {
         .json(rest)
     }
   } catch (error) {
-    console.error('Error in Facebook authentication:', error)
+    console.error('Error in Github authentication:', error)
     next(error)
   }
 }
