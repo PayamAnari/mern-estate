@@ -237,3 +237,16 @@ The Footer component in PayamEstate serves as the bottom section of the applicat
 - [Contact](#contact)
   
 --- 
+## Features
+- User authentication (Sign Up, Sign In, Sign Out)
+- Social login (Google, Facebook)
+- Profile management (Upload profile photo, update information, view existing listings)
+- Property listing operations (Create, update, delete, add or delete images)
+- Image uploads for property listings
+- Search functionality (Rent, Sale, offer, Furnished, Parking Spot, Sorting options)
+- Contact landlord feature for direct communication via email
+- Responsive design for seamless user experience
+- Subscribe section for users to receive updates
+- Email responses for contact and subscription interactions
+
+---
