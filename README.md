@@ -172,3 +172,23 @@ The Sign In Page offers a secure and intuitive authentication experience for use
 </p>
 
 ---
+### Sign Up Page
+
+The Sign Up Page facilitates user registration and account creation with the following features:
+
+- **User Registration:** New users provide essential information, including a username, email, and password.
+- **Error Handling:** Robust error handling ensures clear messages for any issues during the registration process.
+- **Loading State:** A loading state indicates ongoing registration processing, preventing multiple attempts.
+- **Third-Party Authentication:** Offers third-party authentication options via OAuth providers, expediting registration.
+- **Sign In Link:** Encourages existing users to sign in through a prominent link to the Sign In Page.
+- **Terms of Use:** Displays a reminder of the terms of use during the registration process.
+
+   <p align="center">
+  <img width="400" src="https://live.staticflickr.com/65535/53404019733_c3e35c5f04_c.jpg" alt="Image 1">
+  
+  <img width="200" src="https://live.staticflickr.com/65535/53404020698_ca94f08b23_n.jpg" alt="Image 2">
+  
+  <img width="150" src="https://live.staticflickr.com/65535/53404159589_7c93052b14_w.jpg" alt="Image 3">
+</p>
+
+---
