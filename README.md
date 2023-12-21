@@ -250,3 +250,30 @@ The Footer component in PayamEstate serves as the bottom section of the applicat
 - Email responses for contact and subscription interactions
 
 ---
+## Key Features:
+
+1. **User Authentication:**
+Secure authentication system for user sign-up and sign-in.
+Support for social login through Google and Facebook, enhancing user convenience.
+2. **Property Management:**
+Users can easily create, update, and delete property listings.
+Image upload functionality enables vibrant and detailed property showcases.
+3. **Property Transactions:**
+Facilitates property transactions, allowing users to buy or rent properties based on their preferences.
+Discount pricing and offer options for property listings.
+4. **Search Functionality:**
+Robust search capabilities for users to find properties based on location, type, and other filters.
+5. **Communication Features:**
+Users can communicate with property listers, fostering direct interaction.
+Contact options for reaching out to landlords for inquiries or negotiations.
+6. **User Profiles:**
+Personalized user profiles with the ability to upload profile photos.
+Profile management features, including information updates and viewing existing property listings.
+7. **Subscription Service:**
+Users can subscribe for updates on new listings or changes in the real estate market.
+8. **Account Management:**
+Users have the option to delete their accounts, providing flexibility and data privacy.
+9. **Toast Notifications:**
+Utilizes toast notifications for providing users with real-time alerts and feedback throughout the application.
+
+---
