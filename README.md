@@ -110,3 +110,22 @@ The Create Listing Page empowers users to effortlessly showcase their properties
 </p>
 
 ---
+## Update Listing Page
+
+The Update Listing Page empowers users to modify and enhance the details of their property listings seamlessly. Here's an overview of the key features and functionalities:
+
+- **Listing Details Update:** Users can effortlessly update essential details of their property listings, including the title, description, address, type (sale or rent), number of bedrooms and bathrooms, pricing details, and additional features like parking, furnished status, and special offers.
+- **Image Management:** The page allows users to manage property images efficiently. Users can upload up to six images per listing, with the first image serving as the cover photo. The intuitive interface enables users to add, remove, and rearrange images as needed.
+- **Real-time Image Upload Feedback:** Experience real-time feedback during image uploads, including progress indicators and error messages. The system ensures a smooth and error-resistant image upload process.
+- **Validation and Error Handling:** The page incorporates validation checks to ensure data integrity. Users receive clear error messages and guidance in case of invalid inputs or issues during the update process.
+- **Listing Update Submission:** Upon completing the updates, users can submit the changes. The system validates the data and, upon success, notifies the user of the successful listing update. In case of errors, users receive detailed error messages for quick issue resolution.
+
+ <p align="center">
+  <img width="400" src="https://live.staticflickr.com/65535/53403409471_bc58a0e3c7_z.jpg" alt="Image 1">
+  
+  <img width="200" src="https://live.staticflickr.com/65535/53403740934_a8b91ae8cd_w.jpg" alt="Image 2">
+  
+  <img width="150" src="https://live.staticflickr.com/65535/53403609098_581456b69e_n.jpg" alt="Image 3">
+</p>
+
+---
