@@ -150,3 +150,25 @@ The Listing Page provides users with detailed information about a specific prope
 </p>
 
 ---
+## Sign In and Sign Up Pages
+
+### Sign In Page
+
+The Sign In Page offers a secure and intuitive authentication experience for users, encompassing the following features:
+
+- **User Authentication:** Users can sign in using their registered email and password, ensuring a straightforward login process.
+- **Third-Party Authentication:** Streamlines sign-in with OAuth providers, enhancing user convenience and efficiency.
+- **Error Handling:** Robust error handling provides clear messages for authentication failures, contributing to a smooth user experience.
+- **Registration Link:** Prominently directs new users to the Sign Up Page for account creation.
+- **Loading State:** Implements a loading state for real-time feedback, preventing multiple sign-in attempts.
+- **Toast Notifications:** Utilizes toast notifications for non-intrusive messages, enhancing user awareness.
+  
+   <p align="center">
+  <img width="400" src="https://live.staticflickr.com/65535/53404254860_63df612932_c.jpg" alt="Image 1">
+  
+  <img width="200" src="https://live.staticflickr.com/65535/53402894582_e38af5945e_w.jpg" alt="Image 2">
+  
+  <img width="150" src="https://live.staticflickr.com/65535/53402899042_5f0926e4fd_n.jpg" alt="Image 3">
+</p>
+
+---
