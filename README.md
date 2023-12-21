@@ -192,3 +192,19 @@ The Sign Up Page facilitates user registration and account creation with the fol
 </p>
 
 ---
+## Contact Page:
+The contact page in PayamEstate allows users to send messages to property listers or other relevant contacts. The page features a straightforward form for users to input their messages. The form includes fields for essential information, such as the sender's name, email address, and the message itself. The page utilizes the Emailjs utility to handle the message-sending process.
+
+- **Message Sending:** Users can fill out the contact form, providing their name, email address, and message.
+- **Message Submission:** Upon clicking the submit button, the application employs the Emailjs utility to handle the message submission process.
+- **Notification:** Users receive real-time notifications using the react-toastify library, providing feedback on the success or failure of the message submission.
+
+  <p align="center">
+  <img width="400" src="https://live.staticflickr.com/65535/53404282310_18325fc356_c.jpg" alt="Image 1">
+  
+  <img width="200" src="https://live.staticflickr.com/65535/53402922602_ed84e805b3_n.jpg" alt="Image 2">
+  
+  <img width="150" src="https://live.staticflickr.com/65535/53402923647_2eb49511ca_w.jpg" alt="Image 3">
+</p>
+
+---
