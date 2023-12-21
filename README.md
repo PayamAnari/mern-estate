@@ -277,3 +277,78 @@ Users have the option to delete their accounts, providing flexibility and data p
 Utilizes toast notifications for providing users with real-time alerts and feedback throughout the application.
 
 ---
+## Project Structure
+
+The project follows a structured directory hierarchy, with the main components organized as follows:
+
+```
+
+client/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   ├── Contact.jsx
+│   │   ├── Footer.jsx
+│   │   ├── Header.jsx
+│   │   ├── ListingItem.jsx
+│   │   ├── OAuth.jsx
+│   │   ├── PrivateRoute.jsx
+│   ├── pages/
+│   │   ├── About.jsx.jsx
+│   │   ├── ContactInfo.jsx
+│   │   ├── CreateListing.jsx
+│   │   ├── Home.jsx
+│   │   ├── Listing.jsx
+│   │   ├── Profile.jsx
+│   │   ├── Search.jsx
+│   │   ├── ShowListings.jsx
+│   │   ├── SignIn.jsx
+│   │   ├── SignUp.jsx
+│   │   ├── UpdateListing.jsx
+│   ├── redux/
+│   │   ├── store.js
+│   │   └── user
+│   │       └── userSlice.js
+│   ├── utils/
+│   │   ├── Emailjs.js
+│   ├── App.jsx
+│   ├── firebase.js
+│   ├── index.css
+│   ├── main.jsx
+│   ├── .env
+│   ├── eslint.cjs
+│   ├── prettierrc
+│   ├── index.html
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── postcss.config.js
+│   ├── README.md
+│   ├── tailwind.config.js
+│   ├── vite.config.js
+│   ├── server/
+│   │   ├── controllers/
+│   │   │   ├── auth.controller.js
+│   │   │   ├── listing.controller.js
+│   │   │   └── user.controller.js
+│   │   ├── models/
+│   │   │   ├── listing.model.js
+│   │   │   └── user.model.js
+│   │   ├── routes/
+│   │   │   ├── auth.route.js
+│   │   │   ├── listing.route.js
+│   │   │   └── user.route.js
+│   │   ├── utils/
+│   │   │   ├── error.js
+│   │   │   └── verifyUser.js
+│   ├── index.js
+│   ├── .env
+│   ├── .eslint.cjs
+│   ├── .gitignore
+│   ├── prettierrc
+│   ├── package-lock.json
+│   ├── package.json
+│ 
+
+```
+
+---
