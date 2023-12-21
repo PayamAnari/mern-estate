@@ -365,3 +365,14 @@ client/
 4. Start the Vite development server: `npm run dev`
 
 ---
+## Usage
+- Visit [http://localhost:3000](http://localhost:3000) after starting the development server.
+- Sign up or sign in to access user-specific features.
+- Create, update, or delete property listings on your profile page.
+- Edit listings, including adding or deleting images.
+- Explore property details and navigate through the application.
+- Use the search feature to find properties based on various criteria.
+- Communicate directly with property listers using the contact landlord feature.
+- Subscribe for updates to receive notifications about new listings.
+
+---
