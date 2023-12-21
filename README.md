@@ -376,3 +376,21 @@ client/
 - Subscribe for updates to receive notifications about new listings.
 
 ---
+## Technologies Used
+- **Vite** (frontend build tool)
+- **React** (frontend)
+- **MongoDB** (database)
+- **Redux** (state management)
+- **Toast notifications** (notifications)
+- **Tailwind** CSS (styling)
+- **Firebase** (backend and storage)
+- **Firebase Authentication** ( secure user authentication)
+- **Email.js** (email services)
+  
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=html,js,react,mongodb,vite,redux,tailwindcss,firebase,nodejs,express" />
+  </a>
+</p>
+
+---
