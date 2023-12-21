@@ -352,3 +352,9 @@ client/
 ```
 
 ---
+## Getting Started
+### Prerequisites
+- Node.js and npm installed
+- Firebase configuration for backend (update `firebaseConfig` in `firebase.js`)
+  
+---
