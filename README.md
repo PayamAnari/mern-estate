@@ -48,3 +48,23 @@ PayamEstate is a full-stack real estate application that provides a comprehensiv
 
 
 ---
+## Search Page
+
+The Search Page provides users with a powerful tool to discover properties based on various criteria. Here are some key features and functionalities:
+Search Form: Utilize a user-friendly form to search for listings based on criteria such as search term, type (rent, sale, or both), amenities (parking, furnished), and sorting preferences.
+
+- **Dynamic Listings:** View dynamic listing results that update in real-time as you adjust search parameters.
+- **Type Filter:** Easily filter listings by type, including options for both rent and sale.
+- **Amenities Filter:** Refine your search by selecting specific amenities such as parking and furnished options.
+- **Sorting Options:** Choose from multiple sorting options, including price (high to low, low to high), and listing creation date (latest or oldest).
+- **Pagination:** Seamlessly navigate through paginated results with a "Show more" button, providing an intuitive user experience.
+ 
+  <p align="center">
+  <img width="400" src="https://live.staticflickr.com/65535/53403569364_a97a211d4b_z.jpg" alt="Image 1">
+  
+  <img width="200" src="https://live.staticflickr.com/65535/53403437123_159052e1f4_w.jpg" alt="Image 2">
+  
+  <img width="150" src="https://live.staticflickr.com/65535/53403572664_8eeaa4b713_w.jpg" alt="Image 3">
+</p>
+
+---
