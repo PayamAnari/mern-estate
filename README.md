@@ -358,3 +358,10 @@ client/
 - Firebase configuration for backend (update `firebaseConfig` in `firebase.js`)
   
 ---
+### Installation
+1. Clone the repository: `git clone https://github.com/PayamAnari/mern-estate.git`
+2. Navigate to the project folder: `cd payam-estate`
+3. Install dependencies: `npm install`
+4. Start the Vite development server: `npm run dev`
+
+---
