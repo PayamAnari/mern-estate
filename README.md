@@ -414,3 +414,17 @@ Commit your changes and push them to your forked repository.
 Create a pull request to the original repository, explaining your changes and their significance.
 
 ---
+## License
+This project is licensed under the [MIT License](LICENSE).
+
+---
+## Contact
+
+If you have any questions or feedback, feel free to email me at [anari.p62@gmail.com](mailto:your.email@example.com).
+
+---
+### Built with ❤️ by Payam Anari
+
+Thank you for exploring the Gym Fitness app! If you have any questions, feedback, or just want to say hi, feel free to [reach out](mailto:anari.p62@gmail.com). Happy fitness journey!
+
+---
