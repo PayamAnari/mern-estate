@@ -68,3 +68,23 @@ Search Form: Utilize a user-friendly form to search for listings based on criter
 </p>
 
 ---
+## Profile Page
+
+The Profile Page provides users with a centralized hub to manage their account information and interact with the platform. Here's an overview of the key features:
+
+- **User Information:** View and update essential user details, including the profile picture, username, email, full name, and password.
+- **Profile Picture Upload:** Seamlessly upload and manage profile pictures, with real-time feedback on the upload progress. Users can easily replace or update their profile image.
+- **Account Actions:** Perform various account actions such as updating user information, creating new property listings, deleting the account, and signing out.
+- **Listing Count:** Display the number of active listings associated with the user's account, providing quick visibility into their property portfolio.
+- **User-Friendly Interface:** Enjoy an intuitive and user-friendly interface that facilitates smooth navigation and a seamless user experience.
+- **Error Handling:** Receive clear and informative error messages in case of any issues, enhancing the overall user experience.
+
+ <p align="center">
+  <img width="400" src="https://live.staticflickr.com/65535/53403588628_7b79619e6b.jpg" alt="Image 1">
+  
+  <img width="200" src="https://live.staticflickr.com/65535/53402467567_a3a66161b6_n.jpg" alt="Image 2">
+  
+  <img width="150" src="https://live.staticflickr.com/65535/53403398331_98a2acd847_w.jpg" alt="Image 3">
+</p>
+
+---
