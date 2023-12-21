@@ -88,3 +88,25 @@ The Profile Page provides users with a centralized hub to manage their account i
 </p>
 
 ---
+## Create Listing Page
+
+The Create Listing Page empowers users to effortlessly showcase their properties with rich details. Here's an overview of the key functionalities and features:
+
+- **User-Friendly Form:** Access an intuitive form for creating property listings with fields for title, description, address, type (rent or sale), bedrooms, bathrooms, and pricing details.
+- **Image Upload:** Seamlessly upload images to complement your listing, with the ability to designate the first image as the cover photo. Users can upload up to 6 images to showcase their property.
+- **Listing Type Options:** Choose between "Sell" and "Rent" options, tailoring the listing to the specific nature of the property.
+- **Amenities Selection:** Easily specify additional details about the property, including parking availability, furnished status, and special offers.
+- **Real-Time Image Upload Feedback:** Receive instant feedback on image upload progress and errors, ensuring a smooth and error-free process.
+- **Validation Checks:** Benefit from validation checks to ensure data accuracy, including verifying that the discount price is lower than the regular price.
+- **Listing Creation:** Effortlessly create a listing with a single click, triggering a visually pleasing loading state while the system processes the information.
+- **Error Handling:** In the event of an error, users receive clear and concise error messages, allowing for quick issue resolution.
+ 
+ <p align="center">
+  <img width="400" src="https://live.staticflickr.com/65535/53403258691_aa481dcaea_c.jpg" alt="Image 1">
+  
+  <img width="200" src="https://live.staticflickr.com/65535/53403449018_fd88495164_n.jpg" alt="Image 2">
+  
+  <img width="150" src="https://live.staticflickr.com/65535/53403693280_f616b008d4_w.jpg" alt="Image 3">
+</p>
+
+---
