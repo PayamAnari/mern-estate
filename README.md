@@ -13,3 +13,11 @@
 </h3>
 
 ---
+<p align="center">
+	<img 
+    width="1200"
+    alt="home"
+    src="https://live.staticflickr.com/65535/53403097921_41b5b1ed35_c.jpg"/>
+</p>
+
+---
