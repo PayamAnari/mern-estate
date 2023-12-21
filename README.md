@@ -129,3 +129,24 @@ The Update Listing Page empowers users to modify and enhance the details of thei
 </p>
 
 ---
+## Listing Page
+
+The Listing Page provides users with detailed information about a specific property listing, enhancing the user experience and facilitating informed decisions. Here's an overview of the key features and functionalities:
+
+- **Image Showcase:** Utilizing the Swiper library, the Listing Page offers a visually engaging image gallery, allowing users to explore various perspectives of the property. Users can navigate through the images using intuitive navigation controls.
+- **Share Listing Link:** Users can effortlessly share the listing with others by clicking on the share icon. The page dynamically copies the listing URL to the clipboard, providing a convenient way to share property details.
+- **Listing Details:** The page displays essential details of the property, including the title, price, location, type (sale or rent), and additional features such as the number of bedrooms, bathrooms, parking availability, and furnished status.
+- **Special Offers:** If applicable, the page highlights special offers or discounts on the property, providing users with a clear understanding of potential savings.
+- **Description:** A comprehensive property description allows users to gain insights into the unique features and qualities of the listing.
+- **Contact Landlord:** For authenticated users who are not the property owners, a "Contact Landlord" button is available. Clicking this button opens a contact form, facilitating communication between potential tenants or buyers and the property owner.
+- **Error Handling:** In case of loading or fetching errors, users are provided with clear and user-friendly error messages. The page also includes a link to return to the home page for improved navigation.
+
+   <p align="center">
+  <img width="400" src="https://live.staticflickr.com/65535/53403619123_2c7b9cb560_z.jpg" alt="Image 1">
+  
+  <img width="200" src="https://live.staticflickr.com/65535/53403436201_a3fb3015c7_w.jpg" alt="Image 2">
+  
+  <img width="150" src="https://live.staticflickr.com/65535/53403434226_57d8969339_w.jpg" alt="Image 3">
+</p>
+
+---
