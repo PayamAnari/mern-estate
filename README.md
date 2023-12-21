@@ -25,3 +25,10 @@
 [Live Demo Link](https://payam-estate.onrender.com/)
 
 ---
+## Description
+
+### Payam Estate
+
+PayamEstate is a full-stack real estate application that provides a comprehensive platform for users to buy, sell, or rent properties. The application offers a range of features, including user authentication, image uploads, search functionality, and communication with property listers. Users can also subscribe for updates and manage their profiles, including uploading a profile photo, updating information, and viewing the number of existing listings. Additionally, the application supports social login (Google and Facebook) and allows users to delete their accounts.  What sets PayamEstate apart is its seamless user experience, enhanced by the implementation of toast notifications for timely and user-friendly alerts.
+
+---
