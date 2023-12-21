@@ -208,3 +208,18 @@ The contact page in PayamEstate allows users to send messages to property lister
 </p>
 
 ---
+## Footer
+
+The Footer component in PayamEstate serves as the bottom section of the application, containing important links and a subscription form. This component is designed to provide users with convenient access to key sections of the application and allows them to subscribe to updates.
+
+- **Subscription Form:** Users can subscribe to updates by entering their email address in the provided form. The subscription process is facilitated by the Emailjs utility, ensuring a seamless and reliable experience.
+- **Notification:** Real-time notifications using the react-toastify library provide users with immediate feedback on the success or failure of the subscription process.
+
+  <p align="center">
+  <img width="400" src="https://live.staticflickr.com/65535/53404342830_69bd103551_b.jpg" alt="Image 1">
+  
+  <img width="200" src="https://live.staticflickr.com/65535/53404102088_075331658f_n.jpg" alt="Image 2">
+  
+</p>
+
+---
