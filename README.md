@@ -1,40 +1,48 @@
 <h1 align="center">
-	<img
-		width="300"
-		alt="estate"
-		src="https://live.staticflickr.com/65535/53401406788_9f50ac213c_m.jpg">
+  <img
+    width="300"
+    alt="estate"
+    src="https://live.staticflickr.com/65535/53401406788_9f50ac213c_m.jpg">
 </h1>
 
 ---
+
 <h3 align="center">
-	<strong>
-    	:house:	 Payam Estate :house:	
-	</strong>
+  <strong>
+      :house:  Payam Estate :house: 
+  </strong>
 </h3>
 
 ---
+
 <p align="center">
-	<img 
+  <img 
     width="1200"
     alt="home"
     src="https://live.staticflickr.com/65535/53403097921_41b5b1ed35_c.jpg"/>
 </p>
 
 ---
+
 ## Live Demo
+
 [Live Demo Link](https://payam-estate.onrender.com/)
 
 ---
+
 ## Description
 
 ### Payam Estate
 
-PayamEstate is a full-stack real estate application that provides a comprehensive platform for users to buy, sell, or rent properties. The application offers a range of features, including user authentication, image uploads, search functionality, and communication with property listers. Users can also subscribe for updates and manage their profiles, including uploading a profile photo, updating information, and viewing the number of existing listings. Additionally, the application supports social login (Google and Facebook) and allows users to delete their accounts.  What sets PayamEstate apart is its seamless user experience, enhanced by the implementation of toast notifications for timely and user-friendly alerts.
+<<<<<<< HEAD
 
 ---
+
 ## Home
+
+> > > > > > > fbfcef4 (update)
+
 - **Dynamic Swiper Slider:** Engage with stunning property images through an interactive Swiper slider, showcasing the latest and most enticing listings.
-- **Curated Listings:** Discover a curated selection of properties, categorized into offers, places for rent, and places for sale, each designed to redefine your living experience.
 - **Recent Offers:** Explore the latest and exclusive offers on the market.
 - **Recent Places for Rent:** Find comfortable and stylish places available for rent.
 - **Recent Places for Sale:** Discover properties for sale, each promising a unique living experience.
@@ -46,8 +54,8 @@ PayamEstate is a full-stack real estate application that provides a comprehensiv
   <img width="150" src="https://live.staticflickr.com/65535/53402312047_61fb15797e_w.jpg" alt="Image 3">
 </p>
 
-
 ---
+
 ## Search Page
 
 The Search Page provides users with a powerful tool to discover properties based on various criteria. Here are some key features and functionalities:
@@ -58,17 +66,11 @@ Search Form: Utilize a user-friendly form to search for listings based on criter
 - **Amenities Filter:** Refine your search by selecting specific amenities such as parking and furnished options.
 - **Sorting Options:** Choose from multiple sorting options, including price (high to low, low to high), and listing creation date (latest or oldest).
 - **Pagination:** Seamlessly navigate through paginated results with a "Show more" button, providing an intuitive user experience.
- 
   <p align="center">
-  <img width="400" src="https://live.staticflickr.com/65535/53403569364_a97a211d4b_z.jpg" alt="Image 1">
-  
-  <img width="200" src="https://live.staticflickr.com/65535/53403437123_159052e1f4_w.jpg" alt="Image 2">
-  
   <img width="150" src="https://live.staticflickr.com/65535/53403572664_8eeaa4b713_w.jpg" alt="Image 3">
 </p>
 
 ---
-## Profile Page
 
 The Profile Page provides users with a centralized hub to manage their account information and interact with the platform. Here's an overview of the key features:
 
@@ -88,7 +90,6 @@ The Profile Page provides users with a centralized hub to manage their account i
 </p>
 
 ---
-## Create Listing Page
 
 The Create Listing Page empowers users to effortlessly showcase their properties with rich details. Here's an overview of the key functionalities and features:
 
@@ -100,16 +101,19 @@ The Create Listing Page empowers users to effortlessly showcase their properties
 - **Validation Checks:** Benefit from validation checks to ensure data accuracy, including verifying that the discount price is lower than the regular price.
 - **Listing Creation:** Effortlessly create a listing with a single click, triggering a visually pleasing loading state while the system processes the information.
 - **Error Handling:** In the event of an error, users receive clear and concise error messages, allowing for quick issue resolution.
- 
- <p align="center">
-  <img width="400" src="https://live.staticflickr.com/65535/53403258691_aa481dcaea_c.jpg" alt="Image 1">
-  
-  <img width="200" src="https://live.staticflickr.com/65535/53403449018_fd88495164_n.jpg" alt="Image 2">
-  
+  <<<<<<< HEAD
+
+=======
+
   <img width="150" src="https://live.staticflickr.com/65535/53403693280_f616b008d4_w.jpg" alt="Image 3">
 </p>
 
 ---
+
+# <<<<<<< HEAD
+
+> > > > > > > fbfcef4 (update)
+
 ## Update Listing Page
 
 The Update Listing Page empowers users to modify and enhance the details of their property listings seamlessly. Here's an overview of the key features and functionalities:
@@ -129,6 +133,11 @@ The Update Listing Page empowers users to modify and enhance the details of thei
 </p>
 
 ---
+
+# <<<<<<< HEAD
+
+> > > > > > > fbfcef4 (update)
+
 ## Listing Page
 
 The Listing Page provides users with detailed information about a specific property listing, enhancing the user experience and facilitating informed decisions. Here's an overview of the key features and functionalities:
@@ -150,6 +159,11 @@ The Listing Page provides users with detailed information about a specific prope
 </p>
 
 ---
+
+# <<<<<<< HEAD
+
+> > > > > > > fbfcef4 (update)
+
 ## Sign In and Sign Up Pages
 
 ### Sign In Page
@@ -162,7 +176,12 @@ The Sign In Page offers a secure and intuitive authentication experience for use
 - **Registration Link:** Prominently directs new users to the Sign Up Page for account creation.
 - **Loading State:** Implements a loading state for real-time feedback, preventing multiple sign-in attempts.
 - **Toast Notifications:** Utilizes toast notifications for non-intrusive messages, enhancing user awareness.
-  
+  <<<<<<< HEAD
+
+=======
+
+> > > > > > > fbfcef4 (update)
+
    <p align="center">
   <img width="400" src="https://live.staticflickr.com/65535/53404254860_63df612932_c.jpg" alt="Image 1">
   
@@ -172,6 +191,11 @@ The Sign In Page offers a secure and intuitive authentication experience for use
 </p>
 
 ---
+
+# <<<<<<< HEAD
+
+> > > > > > > fbfcef4 (update)
+
 ### Sign Up Page
 
 The Sign Up Page facilitates user registration and account creation with the following features:
@@ -192,8 +216,17 @@ The Sign Up Page facilitates user registration and account creation with the fol
 </p>
 
 ---
+
+<<<<<<< HEAD
+
 ## Contact Page:
-The contact page in PayamEstate allows users to send messages to property listers or other relevant contacts. The page features a straightforward form for users to input their messages. The form includes fields for essential information, such as the sender's name, email address, and the message itself. The page utilizes the Emailjs utility to handle the message-sending process.
+
+=======
+
+## Contact Page:
+
+> > > > > > > fbfcef4 (update)
+> > > > > > > The contact page in PayamEstate allows users to send messages to property listers or other relevant contacts. The page features a straightforward form for users to input their messages. The form includes fields for essential information, such as the sender's name, email address, and the message itself. The page utilizes the Emailjs utility to handle the message-sending process.
 
 - **Message Sending:** Users can fill out the contact form, providing their name, email address, and message.
 - **Message Submission:** Upon clicking the submit button, the application employs the Emailjs utility to handle the message submission process.
@@ -208,6 +241,11 @@ The contact page in PayamEstate allows users to send messages to property lister
 </p>
 
 ---
+
+# <<<<<<< HEAD
+
+> > > > > > > fbfcef4 (update)
+
 ## Footer
 
 The Footer component in PayamEstate serves as the bottom section of the application, containing important links and a subscription form. This component is designed to provide users with convenient access to key sections of the application and allows them to subscribe to updates.
@@ -217,13 +255,29 @@ The Footer component in PayamEstate serves as the bottom section of the applicat
 
   <p align="center">
   <img width="400" src="https://live.staticflickr.com/65535/53404342830_69bd103551_b.jpg" alt="Image 1">
+<<<<<<< HEAD
   
   <img width="200" src="https://live.staticflickr.com/65535/53404102088_075331658f_n.jpg" alt="Image 2">
-  
+
+
 </p>
 
 ---
+
 ## Table of Contents
+
+=======
+
+  <img width="200" src="https://live.staticflickr.com/65535/53404102088_075331658f_n.jpg" alt="Image 2">
+
+</p>
+
+---
+
+## Table of Contents
+
+> > > > > > > fbfcef4 (update)
+
 - [Features](#features)
 - [Key Features](#key-features)
 - [Project Structure](#project-structure)
@@ -235,9 +289,20 @@ The Footer component in PayamEstate serves as the bottom section of the applicat
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
-  
---- 
+  <<<<<<< HEAD
+
+---
+
 ## Features
+
+=======
+
+---
+
+## Features
+
+> > > > > > > fbfcef4 (update)
+
 - User authentication (Sign Up, Sign In, Sign Out)
 - Social login (Google, Facebook)
 - Profile management (Upload profile photo, update information, view existing listings)
@@ -250,33 +315,69 @@ The Footer component in PayamEstate serves as the bottom section of the applicat
 - Email responses for contact and subscription interactions
 
 ---
+
+<<<<<<< HEAD
+
 ## Key Features:
 
 1. **User Authentication:**
-Secure authentication system for user sign-up and sign-in.
-Support for social login through Google and Facebook, enhancing user convenience.
+   Secure authentication system for user sign-up and sign-in.
+   Support for social login through Google and Facebook, enhancing user convenience.
 2. **Property Management:**
-Users can easily create, update, and delete property listings.
-Image upload functionality enables vibrant and detailed property showcases.
+   Users can easily create, update, and delete property listings.
+   Image upload functionality enables vibrant and detailed property showcases.
 3. **Property Transactions:**
-Facilitates property transactions, allowing users to buy or rent properties based on their preferences.
-Discount pricing and offer options for property listings.
+   Facilitates property transactions, allowing users to buy or rent properties based on their preferences.
+   Discount pricing and offer options for property listings.
 4. **Search Functionality:**
-Robust search capabilities for users to find properties based on location, type, and other filters.
+   Robust search capabilities for users to find properties based on location, type, and other filters.
 5. **Communication Features:**
-Users can communicate with property listers, fostering direct interaction.
-Contact options for reaching out to landlords for inquiries or negotiations.
+   Users can communicate with property listers, fostering direct interaction.
+   Contact options for reaching out to landlords for inquiries or negotiations.
 6. **User Profiles:**
-Personalized user profiles with the ability to upload profile photos.
-Profile management features, including information updates and viewing existing property listings.
+   Personalized user profiles with the ability to upload profile photos.
+   Profile management features, including information updates and viewing existing property listings.
 7. **Subscription Service:**
-Users can subscribe for updates on new listings or changes in the real estate market.
+   Users can subscribe for updates on new listings or changes in the real estate market.
 8. **Account Management:**
-Users have the option to delete their accounts, providing flexibility and data privacy.
+   Users have the option to delete their accounts, providing flexibility and data privacy.
 9. **Toast Notifications:**
-Utilizes toast notifications for providing users with real-time alerts and feedback throughout the application.
+   Utilizes toast notifications for providing users with real-time alerts and feedback throughout the application.
 
 ---
+
+=======
+
+## Key Features:
+
+1. **User Authentication:**
+   Secure authentication system for user sign-up and sign-in.
+   Support for social login through Google and Facebook, enhancing user convenience.
+2. **Property Management:**
+   Users can easily create, update, and delete property listings.
+   Image upload functionality enables vibrant and detailed property showcases.
+3. **Property Transactions:**
+   Facilitates property transactions, allowing users to buy or rent properties based on their preferences.
+   Discount pricing and offer options for property listings.
+4. **Search Functionality:**
+   Robust search capabilities for users to find properties based on location, type, and other filters.
+5. **Communication Features:**
+   Users can communicate with property listers, fostering direct interaction.
+   Contact options for reaching out to landlords for inquiries or negotiations.
+6. **User Profiles:**
+   Personalized user profiles with the ability to upload profile photos.
+   Profile management features, including information updates and viewing existing property listings.
+7. **Subscription Service:**
+   Users can subscribe for updates on new listings or changes in the real estate market.
+8. **Account Management:**
+   Users have the option to delete their accounts, providing flexibility and data privacy.
+9. **Toast Notifications:**
+   Utilizes toast notifications for providing users with real-time alerts and feedback throughout the application.
+
+---
+
+> > > > > > > fbfcef4 (update)
+
 ## Project Structure
 
 The project follows a structured directory hierarchy, with the main components organized as follows:
@@ -347,25 +448,61 @@ client/
 │   ├── prettierrc
 │   ├── package-lock.json
 │   ├── package.json
-│ 
+<<<<<<< HEAD
+│
+=======
+│
+>>>>>>> fbfcef4 (update)
 
 ```
 
 ---
+
+<<<<<<< HEAD
+
 ## Getting Started
+
 ### Prerequisites
+
 - Node.js and npm installed
 - Firebase configuration for backend (update `firebaseConfig` in `firebase.js`)
-  
+
 ---
+
 ### Installation
+
+=======
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js and npm installed
+- Firebase configuration for backend (update `firebaseConfig` in `firebase.js`)
+
+---
+
+### Installation
+
+> > > > > > > fbfcef4 (update)
+
 1. Clone the repository: `git clone https://github.com/PayamAnari/mern-estate.git`
 2. Navigate to the project folder: `cd payam-estate`
 3. Install dependencies: `npm install`
 4. Start the Vite development server: `npm run dev`
 
 ---
+
+<<<<<<< HEAD
+
 ## Usage
+
+=======
+
+## Usage
+
+> > > > > > > fbfcef4 (update)
+
 - Visit [http://localhost:3000](http://localhost:3000) after starting the development server.
 - Sign up or sign in to access user-specific features.
 - Create, update, or delete property listings on your profile page.
@@ -376,7 +513,17 @@ client/
 - Subscribe for updates to receive notifications about new listings.
 
 ---
+
+<<<<<<< HEAD
+
 ## Technologies Used
+
+=======
+
+## Technologies Used
+
+> > > > > > > fbfcef4 (update)
+
 - **Vite** (frontend build tool)
 - **React** (frontend)
 - **MongoDB** (database)
@@ -386,7 +533,12 @@ client/
 - **Firebase** (backend and storage)
 - **Firebase Authentication** ( secure user authentication)
 - **Email.js** (email services)
-  
+  <<<<<<< HEAD
+
+=======
+
+> > > > > > > fbfcef4 (update)
+
 <p align="center">
   <a href="https://skillicons.dev">
     <img src="https://skillicons.dev/icons?i=html,js,react,mongodb,vite,redux,tailwindcss,firebase,nodejs,express" />
@@ -394,35 +546,82 @@ client/
 </p>
 
 ---
+
+# <<<<<<< HEAD
+
+> > > > > > > fbfcef4 (update)
+
 ## Contributing
 
 Contributions to the Fitness App are highly encouraged! If you'd like to contribute, please follow these steps:
 
 1. ### Fork the Repository:
-Fork this repository to your GitHub account.
 
-2. ### Create a New Branch: 
-Create a new branch for your feature or bug fix.
+   <<<<<<< HEAD
+   Fork this repository to your GitHub account.
 
-3. ### Make Changes: 
-Implement your changes or additions.
+2. ### Create a New Branch:
 
-4. ### Commit and Push: 
-Commit your changes and push them to your forked repository.
+   Create a new branch for your feature or bug fix.
 
-5. ### Submit a Pull Request: 
-Create a pull request to the original repository, explaining your changes and their significance.
+3. ### Make Changes:
+
+   Implement your changes or additions.
+
+4. ### Commit and Push:
+
+   Commit your changes and push them to your forked repository.
+
+5. ### Submit a Pull Request:
+   Create a pull request to the original repository, explaining your changes and their significance.
 
 ---
+
 ## License
+
 This project is licensed under the [MIT License](LICENSE).
 
 ---
+
+=======
+
+Fork this repository to your GitHub account.
+
+2. ### Create a New Branch:
+
+   Create a new branch for your feature or bug fix.
+
+3. ### Make Changes:
+
+   Implement your changes or additions.
+
+4. ### Commit and Push:
+
+   Commit your changes and push them to your forked repository.
+
+5. ### Submit a Pull Request:
+   Create a pull request to the original repository, explaining your changes and their significance.
+
+---
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+> > > > > > > fbfcef4 (update)
+
 ## Contact
 
 If you have any questions or feedback, feel free to email me at [anari.p62@gmail.com](mailto:your.email@example.com).
 
 ---
+
+# <<<<<<< HEAD
+
+> > > > > > > fbfcef4 (update)
+
 ### Built with ❤️ by Payam Anari
 
 Thank you for exploring the Gym Fitness app! If you have any questions, feedback, or just want to say hi, feel free to [reach out](mailto:anari.p62@gmail.com). Happy fitness journey!
