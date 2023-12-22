@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
-import { FaSearch, FaBars } from 'react-icons/fa';
+import { FaSearch, FaBars, FaTimes } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import {
@@ -176,8 +176,12 @@ export default function Header() {
 
       <div className='sm:hidden'>
         <div className='flex justify-between items-center p-3'>
-          <button onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}>
-            <FaBars className='text-black' />
+        <button onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}>
+            {isMobileMenuOpen ? (
+              <FaTimes className='text-black' />
+            ) : (
+              <FaBars className='text-black' />
+            )}
           </button>
 
           <Link to='/'>
@@ -204,7 +208,7 @@ export default function Header() {
         </div>
 
         {isMobileMenuOpen && (
-          <div className='bg-slate-400 p-3 flex flex-col items-center '>
+          <div className='bg-slate-400 p-6 pl-12 flex flex-col items-start '>
             <Link to='/' onClick={handleLinkClick}>
               <p className='text-black font-semibold hover:text-white  py-2'>
                 Home
